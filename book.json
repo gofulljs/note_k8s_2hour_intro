@@ -1,0 +1,42 @@
+{
+  "plugins": [
+    "back-to-top-button",
+    "-lunr",
+    "-search",
+    "search-plus",
+    "code",
+    "anchor-navigation-ex",
+    "ga",
+    "3-ba",
+    "github",
+    "disqus"
+  ],
+  "pluginsConfig": {
+    "code": {
+      "copyButtons": false
+    },
+    "anchor-navigation-ex": {
+      "tocLevel1Icon": "fa fa-hand-o-right",
+      "tocLevel2Icon": "fa fa-hand-o-right",
+      "tocLevel3Icon": "fa fa-hand-o-right",
+      "multipleH1": false,
+      "multipleH2": false,
+      "multipleH3": false,
+      "multipleH4": false,
+      "showLevelIcon": false,
+      "showLevel": false
+    },
+    "ga": {
+      "token": "UA-XXXX-Y"
+    },
+    "3-ba": {
+      "token": "xxxxxxxx"
+    },
+    "github": {
+      "url": "https://github.com/gofulljs"
+    },
+    "disqus": {
+      "shortName": "gopher-1"
+    }
+  }
+}
