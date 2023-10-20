@@ -1,0 +1,11 @@
+/* 图片居中 */
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 蓝色底 */
+.b {
+  background: #dfeefd;
+  padding: 10px;
+}
