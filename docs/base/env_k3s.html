@@ -1,0 +1,478 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用 K3s 快速搭建集群 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="pod.html" />
+    
+    
+    <link rel="prev" href="minikube.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="architecture.html">
+            
+                <a href="architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="minikube.html">
+            
+                <a href="minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="env_k3s.html">
+            
+                <a href="env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="pod.html">
+            
+                <a href="pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >使用 K3s 快速搭建集群</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;-k3s-&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;"><b></b>&#x4F7F;&#x7528; K3s &#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;-k3s"><b></b>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528; K3s</a></li><li><span class="title-icon "></span><a href="#&#x79BB;&#x7EBF;&#x5B89;&#x88C5;-k3s-&#x96C6;&#x7FA4;"><b></b>&#x79BB;&#x7EBF;&#x5B89;&#x88C5; K3s &#x96C6;&#x7FA4;</a></li><ul><li><span class="title-icon "></span><a href="#&#x8FD0;&#x884C;&#x73AF;&#x5883;"><b></b>&#x8FD0;&#x884C;&#x73AF;&#x5883;</a></li><li><span class="title-icon "></span><a href="#1&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><b></b>1.&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#2&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;"><b></b>2.&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</a></li><li><span class="title-icon "></span><a href="#3&#x6267;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;"><b></b>3.&#x6267;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;</a></li></ul><li><span class="title-icon "></span><a href="#&#x6392;&#x67E5;&#x9519;&#x8BEF;"><b></b>&#x6392;&#x67E5;&#x9519;&#x8BEF;</a></li></ul></ul></div><a href="#&#x4F7F;&#x7528;-k3s-&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4F7F;&#x7528;-k3s-&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;"><a name="&#x4F7F;&#x7528;-k3s-&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;-k3s-&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528; K3s &#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x96C6;&#x7FA4;</h1>
+<p class="b">
+&#x63D0;&#x793A;&#xFF1A;<br>
+1.&#x672C;&#x8BFE;&#x7A0B;&#x57FA;&#x4E8E;kubernetes V1.25&#x7248;&#x672C;&#x3002;&#x63D0;&#x793A;&#xFF1A;<br>
+2.&#x4ECE;V1.24&#x5F00;&#x59CB;&#xFF0C;kubernetes&#x9ED8;&#x8BA4;&#x5BB9;&#x5668;&#x8FD0;&#x884C;&#x65F6;&#x4F7F;&#x7528;containerd&#xFF0C;&#x4E0D;&#x518D;&#x4F7F;&#x7528;docker&#x3002;
+</p>
+
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;-k3s"><a name="&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;-k3s" class="anchor-navigation-ex-anchor" href="#&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;-k3s"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528; K3s</h2>
+<p>K3s &#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x3001;$\color{red}{&#x5B8C;&#x5168;&#x517C;&#x5BB9;}$&#x7684; Kubernetes &#x53D1;&#x884C;&#x7248;&#x672C;&#x3002;&#x975E;&#x5E38;&#x9002;&#x5408;&#x521D;&#x5B66;&#x8005;&#x3002;
+K3s &#x5C06;&#x6240;&#x6709; Kubernetes &#x63A7;&#x5236;&#x5E73;&#x9762;&#x7EC4;&#x4EF6;&#x90FD;&#x5C01;&#x88C5;&#x5728;&#x5355;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x548C;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&lt;100M,&#x5360;&#x7528;&#x8D44;&#x6E90;&#x66F4;&#x5C0F;&#xFF0C;&#x4E14;&#x5305;&#x542B;&#x4E86; kubernetes &#x8FD0;&#x884C;&#x6240;&#x9700;&#x8981;&#x7684;&#x90E8;&#x5206;&#x5916;&#x90E8;&#x4F9D;&#x8D56;&#x548C;&#x672C;&#x5730;&#x5B58;&#x50A8;&#x63D0;&#x4F9B;&#x7A0B;&#x5E8F;&#x3002;
+K3s &#x63D0;&#x4F9B;&#x4E86;&#x79BB;&#x7EBF;&#x5B89;&#x88C5;&#x5305;&#xFF0C;&#x5B89;&#x88C5;&#x8D77;&#x6765;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#xFF0C;&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#x9047;&#x5230;&#x5404;&#x79CD;&#x7F51;&#x7EDC;&#x8D44;&#x6E90;&#x8BBF;&#x95EE;&#x95EE;&#x9898;&#x3002;
+K3s &#x7279;&#x522B;&#x9002;&#x7528;&#x4E8E;&#x8FB9;&#x7F18;&#x8BA1;&#x7B97;&#x3001;&#x7269;&#x8054;&#x7F51;&#x3001;&#x5D4C;&#x5165;&#x5F0F;&#x548C; ARM &#x79FB;&#x52A8;&#x7AEF;&#x573A;&#x666F;&#x3002;</p>
+<p class="r">
+&#x63D0;&#x793A;&#xFF1A;<br>
+K3s&#x5B8C;&#x5168;&#x517C;&#x5BB9;kubernetes&#xFF0C;&#x4E8C;&#x8005;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x4F7F;&#x7528;k3s&#x5B8C;&#x5168;&#x6EE1;&#x8DB3;&#x6211;&#x4EEC;&#x5B66;&#x4E60;kubernetes&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x8BFE;&#x7A0B;&#x7684;&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x518D;&#x4F7F;&#x7528;kubeadm&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x96C6;&#x7FA4;&#x3002;
+</p>
+
+<h2 id="&#x79BB;&#x7EBF;&#x5B89;&#x88C5;-k3s-&#x96C6;&#x7FA4;"><a name="&#x79BB;&#x7EBF;&#x5B89;&#x88C5;-k3s-&#x96C6;&#x7FA4;" class="anchor-navigation-ex-anchor" href="#&#x79BB;&#x7EBF;&#x5B89;&#x88C5;-k3s-&#x96C6;&#x7FA4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x79BB;&#x7EBF;&#x5B89;&#x88C5; K3s &#x96C6;&#x7FA4;</h2>
+<p>K3s &#x96C6;&#x7FA4;&#x5206;&#x4E3A; <code>k3s Server</code>(&#x63A7;&#x5236;&#x5E73;&#x9762;)&#x548C; <code>k3s Agent</code>(&#x5DE5;&#x4F5C;&#x8282;&#x70B9;)&#x3002;&#x6240;&#x6709;&#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x6253;&#x5305;&#x5728;&#x5355;&#x4E2A;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p><img src="imgs/image-3.png" alt="Alt text"></p>
+<h3 id="&#x8FD0;&#x884C;&#x73AF;&#x5883;"><a name="&#x8FD0;&#x884C;&#x73AF;&#x5883;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x884C;&#x73AF;&#x5883;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x884C;&#x73AF;&#x5883;</h3>
+<ul>
+<li>&#x6700;&#x4F4E;&#x8FD0;&#x884C;&#x8981;&#x6C42;<ul>
+<li>&#x5185;&#x5B58;: 512MB / CPU: 1 &#x6838;&#x5FC3;</li>
+</ul>
+</li>
+<li>K3s &#x7248;&#x672C;&#xFF1A;v1.25.0+k3s1</li>
+<li>&#x96C6;&#x7FA4;&#x89C4;&#x5212;</li>
+</ul>
+<table>
+  <tr>
+  <th>&#x4E3B;&#x673A;&#x540D;</th>
+  <th>IP &#x5730;&#x5740;</th>
+  <th>&#x914D;&#x7F6E;</th>
+  <th>&#x7CFB;&#x7EDF;</th>
+  <th>&#x7F51;&#x7EDC;</th>
+  </tr>
+  <tr>
+  <td>k8s-master</td>
+  <td>192.168.56.109</td>
+  <td rowspan="3">&#x5185;&#x5B58;&#xFF1A;2G<br>CPU&#xFF1A;2&#x6838;<br>&#x786C;&#x76D8;&#xFF1A;20G</td>
+  <td rowspan="3">CentOS<br>7.9.2009<br>&#x6700;&#x5C0F;&#x5316;&#x5B89;&#x88C5;</td>
+  <td rowspan="3">&#x4E92;&#x8054;&#x7F51;:NAT&#x7F51;&#x7EDC;<br>&#x5185;&#x90E8;&#x7F51;&#x7EDC;: Host-only</td>
+  </tr>
+  <tr>
+  <td>k8s-worker1</td>
+  <td>192.168.56.111</td>
+  </tr>
+  <tr>
+  <td>k8s-worker2</td>
+  <td>192.168.56.112</td>
+  </tr>
+</table>
+
+<ul>
+<li>ps</li>
+</ul>
+<p>&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x9700;&#x8981;&#x8BBE;&#x7F6E; hostname</p>
+<ul>
+<li>k8s-master</li>
+</ul>
+<pre><code class="lang-sh">hostnamectl <span class="hljs-built_in">set</span>-hostname k8s-master
+</code></pre>
+<ul>
+<li>k8s-worker</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-comment"># k8s-worker1</span>
+hostnamectl <span class="hljs-built_in">set</span>-hostname k8s-worker1
+<span class="hljs-comment"># k8s-worker2</span>
+hostnamectl <span class="hljs-built_in">set</span>-hostname k8s-worker2
+</code></pre>
+<h3 id="1&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><a name="1&#x51C6;&#x5907;&#x5DE5;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#1&#x51C6;&#x5907;&#x5DE5;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h3>
+<p>&#x9700;&#x8981;&#x5728;&#x6BCF;&#x53F0;&#x673A;&#x5668;&#x4E0A;&#x6267;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<ul>
+<li>&#x5173;&#x95ED;&#x9632;&#x706B;&#x5899;</li>
+<li>&#x8BBE;&#x7F6E; selinux(&#x9700;&#x8981;&#x8054;&#x7F51;)</li>
+</ul>
+<pre><code class="lang-sh">systemctl <span class="hljs-built_in">disable</span> firewalld --now
+</code></pre>
+<pre><code class="lang-sh">yum install -y container-selinux selinux-policy-base
+yum install -y https://rpm.rancher.io/k3s/latest/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
+</code></pre>
+<h3 id="2&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;"><a name="2&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;" class="anchor-navigation-ex-anchor" href="#2&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>2.&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;</h3>
+<p>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x811A;&#x672C; install.sh&#xFF1A;<a href="https://get.k3s.io/" target="_blank">https://get.k3s.io/</a>
+&#x4E0B;&#x8F7D; k3s &#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#xFF1A;<a href="https://github.com/k3s-io/k3s/releases/download/v1.25.0%2Bk3s1/k3s" target="_blank">k3s</a>
+&#x4E0B;&#x8F7D;&#x5FC5;&#x8981;&#x7684; image&#xFF1A;<a href="https://github.com/k3s-io/k3s/releases/download/v1.25.0%2Bk3s1/k3s-airgap-images-amd64.tar.gz" target="_blank">&#x79BB;&#x7EBF;&#x5B89;&#x88C5;&#x9700;&#x8981;&#x7684; image &#x6587;&#x4EF6;</a></p>
+<p class="r">&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x5728;github&#x4ED3;&#x5E93;&#x4E2D;&#x83B7;&#x53D6;&#xFF1A;https://github.com/k3s-io/k3s</p>
+
+<hr>
+<h3 id="3&#x6267;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;"><a name="3&#x6267;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;" class="anchor-navigation-ex-anchor" href="#3&#x6267;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;"><i class="fa fa-link" aria-hidden="true"></i></a>3.&#x6267;&#x884C;&#x5B89;&#x88C5;&#x811A;&#x672C;</h3>
+<ol>
+<li>&#x5C06;<code>k3s</code>&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x79FB;&#x52A8;&#x5230;/usr/local/bin &#x76EE;&#x5F55;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x6267;&#x884C;&#x6743;&#x9650;</li>
+</ol>
+<pre><code class="lang-sh">mv k3s /usr/<span class="hljs-built_in">local</span>/bin
+chmod +x /usr/<span class="hljs-built_in">local</span>/bin/k3s
+</code></pre>
+<ol>
+<li>&#x5C06;&#x955C;&#x50CF;&#x79FB;&#x52A8;&#x5230;/var/lib/rancher/k3s/agent/images/&#x76EE;&#x5F55;&#xFF08;&#x65E0;&#x9700;&#x89E3;&#x538B;&#xFF09;</li>
+</ol>
+<pre><code class="lang-sh">mkdir -p /var/lib/rancher/k3s/agent/images/
+cp ./k3s-airgap-images-amd64.tar.gz /var/lib/rancher/k3s/agent/images/
+</code></pre>
+<ul>
+<li>&#x5728;<code>k8s-master</code>&#x8282;&#x70B9;&#x6267;&#x884C;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-comment">#&#x4FEE;&#x6539;&#x6743;&#x9650;</span>
+chmod +x install.sh
+<span class="hljs-comment">#&#x79BB;&#x7EBF;&#x5B89;&#x88C5;</span>
+INSTALL_K3S_SKIP_DOWNLOAD=<span class="hljs-literal">true</span> ./install.sh
+<span class="hljs-comment">#&#x5B89;&#x88C5;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x67E5;&#x770B;&#x8282;&#x70B9;&#x72B6;&#x6001;</span>
+kubectl get node
+<span class="hljs-comment">#&#x67E5;&#x770B;token</span>
+cat /var/lib/rancher/k3s/server/node-token
+<span class="hljs-comment">#K10c4b79481685b50e4bca2513078f4e83b62d1d0b5f133a8a668b65c8f9249c53e::server:bf7b63be7f3471838cbafa12c1a1964d</span>
+</code></pre>
+<ul>
+<li>&#x5728;<code>k8s-worker1</code>&#x548C;<code>k8s-worker2</code>&#x8282;&#x70B9;&#x6267;&#x884C;</li>
+</ul>
+<pre><code class="lang-sh">INSTALL_K3S_SKIP_DOWNLOAD=<span class="hljs-literal">true</span> \
+K3S_URL=https://192.168.56.109:6443 \
+K3S_TOKEN=K1012bdc3ffe7a5d89ecb125e56c38f9fe84a9f9aed6db605f7698fa744f2f2f12f::server:fdf33f4921dd607cadf2ae3c8eaf6ad9 \
+./install.sh
+</code></pre>
+<h2 id="&#x6392;&#x67E5;&#x9519;&#x8BEF;"><a name="&#x6392;&#x67E5;&#x9519;&#x8BEF;" class="anchor-navigation-ex-anchor" href="#&#x6392;&#x67E5;&#x9519;&#x8BEF;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6392;&#x67E5;&#x9519;&#x8BEF;</h2>
+<p>&#x5982;&#x679C;&#x5B89;&#x88C5;&#x6216;&#x542F;&#x52A8;&#x4E0D;&#x6210;&#x529F;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x539F;&#x56E0;&#xFF1A;</p>
+<p>
+1. &#x65F6;&#x95F4;&#x4E0D;&#x7EDF;&#x4E00; <br>
+2. IP&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x8BF7;&#x4E3A;&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x5206;&#x914D;&#x4E0D;&#x540C;&#x7684;IP <br>
+3. &#x4E3B;&#x673A;&#x540D;(hostname)&#x91CD;&#x590D;&#xFF0C;&#x8BF7;&#x4E3A;&#x6BCF;&#x4E2A;&#x4E3B;&#x673A;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x4E3B;&#x673A;&#x540D; <br>
+4. &#x7F51;&#x5361;&#x7684;MAC&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x590D;&#x5236;&#x865A;&#x62DF;&#x673A;&#x65F6;&#xFF0C;&#x8BF7;&#x4E3A;&#x6240;&#x6709;&#x7F51;&#x5361;&#x91CD;&#x65B0;&#x751F;&#x4EA7;MAC&#x5730;&#x5740; <br>
+</p>
+
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;<br>
+<a href="https://k3s.io/" target="_blank">https://k3s.io/</a>
+<a href="https://rancher.com/docs/k3s/latest/en/" target="_blank">https://rancher.com/docs/k3s/latest/en/</a>
+<a href="https://rancher.com/docs/k3s/latest/en/quick-start/" target="_blank">https://rancher.com/docs/k3s/latest/en/quick-start/</a>
+<a href="https://rancher.com/docs/k3s/latest/en/installation/airgap/" target="_blank">https://rancher.com/docs/k3s/latest/en/installation/airgap/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="minikube.html" class="navigation navigation-prev " aria-label="Previous page: 安装 Minikube">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="pod.html" class="navigation navigation-next " aria-label="Next page: Pod(容器集)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用 K3s 快速搭建集群","level":"1.2.4","depth":2,"next":{"title":"Pod(容器集)","level":"1.2.5","depth":2,"path":"base/pod.md","ref":"base/pod.md","articles":[]},"previous":{"title":"安装 Minikube","level":"1.2.3","depth":2,"path":"base/minikube.md","ref":"base/minikube.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["back-to-top-button","-lunr","-search","search-plus","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"base/env_k3s.md","mtime":"2023-10-23T04:55:39.396Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-23T10:38:44.162Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -8,7 +8,13 @@ a note use gitbook for Kubernetes 二小时入门教程,
 
 https://www.bilibili.com/video/BV1k24y197KC
 
+## 原文档地址
+
+https://www.yuque.com/wukong-zorrm/qdoy5p
+
 ## 为什么 Kubernetes 学起来很难？
+
+zh
 
 - Kubernetes 本身比较复杂，组件众多，安装过程比较麻烦
 
@@ -34,4 +40,3 @@ https://www.bilibili.com/video/BV1k24y197KC
   - 本课程会演示常用中间件的安装（MySQL 主从集群、Redis 主从集群）
   - 本课程会演示如何在 K8s 上运行一个完整的应用
     - 应用程序包括前端(node/nginx)、缓存(redis)、数据库(mysql)、后端(java）
-

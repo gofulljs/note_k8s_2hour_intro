@@ -1,0 +1,405 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>安装 Minikube · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="env_k3s.html" />
+    
+    
+    <link rel="prev" href="architecture.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="architecture.html">
+            
+                <a href="architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="minikube.html">
+            
+                <a href="minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="env_k3s.html">
+            
+                <a href="env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="pod.html">
+            
+                <a href="pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >安装 Minikube</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;-minikube"><b></b>&#x5B89;&#x88C5; Minikube</a></li><ul><li><span class="title-icon "></span><a href="#dashbord"><b></b>dashbord</a></li></ul></ul></div><a href="#&#x5B89;&#x88C5;-minikube" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5B89;&#x88C5;-minikube"><a name="&#x5B89;&#x88C5;-minikube" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;-minikube"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5; Minikube</h1>
+<p>docker-desktop &#x65B0;&#x7248;&#x672C;&#x81EA;&#x5E26;&#x4E86; kubenetes, &#x4E0D;&#x9700;&#x8981;&#x4F7F;&#x7528; minikube &#x4E86;&#x3002;</p>
+<p>&#x81EA;&#x5E26;&#x7684;&#x5B89;&#x88C5;&#x8F83;&#x6162;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://github.com/AliyunContainerService/k8s-for-docker-desktop" target="_blank">https://github.com/AliyunContainerService/k8s-for-docker-desktop</a> &#x53BB;&#x5B89;&#x88C5; kubenetes &#x548C; dashboard</p>
+<h2 id="dashbord"><a name="dashbord" class="anchor-navigation-ex-anchor" href="#dashbord"><i class="fa fa-link" aria-hidden="true"></i></a>dashbord</h2>
+<p><a href="https://github.com/kubernetes/dashboard" target="_blank">https://github.com/kubernetes/dashboard</a></p>
+<ul>
+<li>&#x5B89;&#x88C5;&#x5B98;&#x65B9;&#x63A7;&#x5236;&#x53F0;</li>
+</ul>
+<pre><code class="lang-sh">kubectl apply <span class="hljs-_">-f</span> https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+</code></pre>
+<p>&#x67E5;&#x770B;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x6210;&#x529F;</p>
+<pre><code class="lang-sh">$ kubectl get pods -A
+NAMESPACE              NAME                                         READY   STATUS    RESTARTS        AGE
+kube-system            coredns-5d78c9869d-tjhgv                     1/1     Running   5 (7m45s ago)   2d22h
+kube-system            coredns-5d78c9869d-vbzjn                     1/1     Running   5 (7m45s ago)   2d22h
+kube-system            etcd-docker-desktop                          1/1     Running   5 (7m49s ago)   2d22h
+kube-system            kube-apiserver-docker-desktop                1/1     Running   5 (7m40s ago)   2d22h
+kube-system            kube-controller-manager-docker-desktop       1/1     Running   5 (7m50s ago)   2d22h
+kube-system            kube-proxy-nrmkx                             1/1     Running   5 (7m50s ago)   2d22h
+kube-system            kube-scheduler-docker-desktop                1/1     Running   5 (7m50s ago)   2d22h
+kube-system            storage-provisioner                          1/1     Running   9 (6m28s ago)   2d22h
+kube-system            vpnkit-controller                            1/1     Running   5 (7m50s ago)   2d22h
+kubernetes-dashboard   dashboard-metrics-scraper-5cb4f4bb9c-ws8sk   1/1     Running   1 (7m50s ago)   11m
+kubernetes-dashboard   kubernetes-dashboard-6967859bff-5tvh6        1/1     Running   1 (7m50s ago)   11m
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x540E; 2 &#x884C;&#x51FA;&#x73B0;&#x4EE3;&#x8868;&#x6210;&#x529F;</p>
+<p>&#x542F;&#x7528; dashboard</p>
+<pre><code class="lang-sh">kubectl proxy
+</code></pre>
+<p>kubectl &#x4F1A;&#x4F7F;&#x5F97; Dashboard &#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/" target="_blank">http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</a> &#x8BBF;&#x95EE;&#x3002;</p>
+<p>UI &#x53EA;&#x80FD; &#x901A;&#x8FC7;&#x6267;&#x884C;&#x8FD9;&#x6761;&#x547D;&#x4EE4;&#x7684;&#x673A;&#x5668;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;</p>
+<p>&#x4EE5;&#x4E0A;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;</p>
+<p>&#x53C2;&#x8003;</p>
+<p><a href="https://github.com/AliyunContainerService/k8s-for-docker-desktop" target="_blank">https://github.com/AliyunContainerService/k8s-for-docker-desktop</a></p>
+<ul>
+<li><p>&#x90E8;&#x7F72;&#x8BBF;&#x95EE;&#x4EE4;&#x724C;</p>
+<ul>
+<li>&#x6388;&#x6743; kube-system &#x9ED8;&#x8BA4;&#x670D;&#x52A1;&#x8D26;&#x53F7;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-sh">kubectl apply <span class="hljs-_">-f</span> https://raw.githubusercontent.com/AliyunContainerService/k8s-for-docker-desktop/master/kube-system-default.yaml
+</code></pre>
+<ul>
+<li>&#x83B7;&#x53D6; token</li>
+</ul>
+<p>windows</p>
+<pre><code class="lang-powershell"><span class="hljs-variable">$TOKEN</span>=((kubectl -n kube-system describe secret default | <span class="hljs-built_in">Select-String</span> <span class="hljs-string">&quot;token:&quot;</span>) -split <span class="hljs-string">&quot; +&quot;</span>)[<span class="hljs-number">1</span>]
+kubectl config set-credentials docker-desktop --token=<span class="hljs-string">&quot;${TOKEN}&quot;</span>
+echo <span class="hljs-variable">$TOKEN</span>
+</code></pre>
+<p>or</p>
+<p>linux</p>
+<pre><code class="lang-sh">TOKEN=$(kubectl -n kube-system describe secret default| awk <span class="hljs-string">&apos;$1==&quot;token:&quot;{print $2}&apos;</span>)
+kubectl config <span class="hljs-built_in">set</span>-credentials docker-desktop --token=<span class="hljs-string">&quot;<span class="hljs-variable">${TOKEN}</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-variable">$TOKEN</span>
+</code></pre>
+<p>&#x751F;&#x6210;&#x597D;&#x540E;&#x5728;&#x4EE5;&#x4E0B;&#x8DEF;&#x5F84;</p>
+<p>powershell:</p>
+<pre><code class="lang-powershell">%UserProfile%\.kube\config
+</code></pre>
+<p>or sh:</p>
+<pre><code class="lang-sh"><span class="hljs-variable">$HOME</span>/.kube/config
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="architecture.html" class="navigation navigation-prev " aria-label="Previous page: Kubernetes 架构">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="env_k3s.html" class="navigation navigation-next " aria-label="Next page: 使用 K3s 快速搭建集群">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"安装 Minikube","level":"1.2.3","depth":2,"next":{"title":"使用 K3s 快速搭建集群","level":"1.2.4","depth":2,"path":"base/env_k3s.md","ref":"base/env_k3s.md","articles":[]},"previous":{"title":"Kubernetes 架构","level":"1.2.2","depth":2,"path":"base/architecture.md","ref":"base/architecture.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["back-to-top-button","-lunr","-search","search-plus","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"base/minikube.md","mtime":"2023-10-23T03:26:23.077Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-23T10:38:44.162Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
