@@ -1,0 +1,30 @@
+group:
+  s: 1
+  name: group-1
+  members:
+    - name: "Jack Ma"
+      UID: 10001
+    - name: "Lei Jun"
+      UID: 10002
+  # comments
+  words: ["I don't care money", "R U OK"]
+  text: |
+    line
+    new line
+    3rd line
+
+# --- 多个资源对象的分隔
+---
+group:
+  name: group-2
+  members:
+    - name: "Jack Ma"
+      UID: 10001
+    - name: "Lei Jun"
+      UID: 10002
+  # comments
+  words: ["I don't care money", "R U OK"]
+  text: |
+    line
+    new line
+    3rd line

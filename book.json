@@ -4,6 +4,7 @@
     "-lunr",
     "-search",
     "search-plus",
+    "a-import",
     "code",
     "anchor-navigation-ex",
     "ga",

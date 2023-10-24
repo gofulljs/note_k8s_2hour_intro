@@ -1,0 +1,609 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Deployment(部署)与 ReplicaSet(副本集) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="service.html" />
+    
+    
+    <link rel="prev" href="pod.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="architecture.html">
+            
+                <a href="architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="minikube.html">
+            
+                <a href="minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="env_k3s.html">
+            
+                <a href="env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="pod.html">
+            
+                <a href="pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.6" data-path="deployment_replicaset.html">
+            
+                <a href="deployment_replicaset.html">
+            
+                    
+                    Deployment(部署)与 ReplicaSet(副本集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="service.html">
+            
+                <a href="service.html">
+            
+                    
+                    Service(服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="namespace.html">
+            
+                <a href="namespace.html">
+            
+                    
+                    Namespace(命名空间)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="declaration.html">
+            
+                <a href="declaration.html">
+            
+                    
+                    声明式对象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Deployment(部署)与 ReplicaSet(副本集)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#deployment&#x90E8;&#x7F72;&#x4E0E;-replicaset&#x526F;&#x672C;&#x96C6;"><b></b>Deployment(&#x90E8;&#x7F72;)&#x4E0E; ReplicaSet(&#x526F;&#x672C;&#x96C6;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x7F29;&#x653E;"><b></b>&#x7F29;&#x653E;</a></li><li><span class="title-icon "></span><a href="#&#x6EDA;&#x52A8;&#x66F4;&#x65B0;"><b></b>&#x6EDA;&#x52A8;&#x66F4;&#x65B0;</a></li></ul></ul></div><a href="#deployment&#x90E8;&#x7F72;&#x4E0E;-replicaset&#x526F;&#x672C;&#x96C6;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="deployment&#x90E8;&#x7F72;&#x4E0E;-replicaset&#x526F;&#x672C;&#x96C6;"><a name="deployment&#x90E8;&#x7F72;&#x4E0E;-replicaset&#x526F;&#x672C;&#x96C6;" class="anchor-navigation-ex-anchor" href="#deployment&#x90E8;&#x7F72;&#x4E0E;-replicaset&#x526F;&#x672C;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>Deployment(&#x90E8;&#x7F72;)&#x4E0E; ReplicaSet(&#x526F;&#x672C;&#x96C6;)</h1>
+<p><strong>Deployment</strong>&#x662F;&#x5BF9; ReplicaSet &#x548C; Pod &#x66F4;&#x9AD8;&#x7EA7;&#x7684;&#x62BD;&#x8C61;&#x3002;
+&#x5B83;&#x4F7F; Pod &#x62E5;&#x6709;&#x591A;&#x526F;&#x672C;&#xFF0C;&#x81EA;&#x6108;&#xFF0C;&#x6269;&#x7F29;&#x5BB9;&#x3001;&#x6EDA;&#x52A8;&#x5347;&#x7EA7;&#x7B49;&#x80FD;&#x529B;&#x3002;</p>
+<p><strong>ReplicaSet</strong>(&#x526F;&#x672C;&#x96C6;)&#x662F;&#x4E00;&#x4E2A; Pod &#x7684;&#x96C6;&#x5408;&#x3002;
+&#x5B83;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8FD0;&#x884C; Pod &#x7684;&#x6570;&#x91CF;&#xFF0C;&#x786E;&#x4FDD;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;&#x90FD;&#x6709;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684; Pod &#x526F;&#x672C;&#x5728;&#x8FD0;&#x884C;&#x3002;
+&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x4E0D;&#x76F4;&#x63A5;&#x4F7F;&#x7528; ReplicaSet&#xFF0C;&#x800C;&#x662F;&#x5728; Deployment &#x4E2D;&#x58F0;&#x660E;&#x3002;</p>
+<pre><code class="lang-sh"><span class="hljs-comment">#&#x521B;&#x5EFA;deployment,&#x90E8;&#x7F72;3&#x4E2A;&#x8FD0;&#x884C;nginx&#x7684;Pod</span>
+$ kubectl create deployment nginx-deploy --image=nginx:1.22 --replicas=3
+<span class="hljs-comment">#&#x67E5;&#x770B;deployment(&#x7F29;&#x5199;&#x6210;deploy)</span>
+$ kubectl get deploy
+<span class="hljs-comment"># &#x67E5;&#x770B;pod</span>
+$ kubectl get pod
+NAME                            READY   STATUS    RESTARTS   AGE
+nginx-deploy-5964889c54-zmk6p   1/1     Running   0          6m1s
+nginx-deploy-5964889c54-th9f8   1/1     Running   0          6m1s
+nginx-deploy-5964889c54-28689   1/1     Running   0          6m1s
+<span class="hljs-comment">#&#x67E5;&#x770B;replicaSet(&#x7F29;&#x5199;&#x4E3A;rs)</span>
+$ kubectl get replicaSet
+NAME                      DESIRED   CURRENT   READY   AGE
+nginx-deploy-5964889c54   3         3         3       7m13s
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230; 5964889c54 &#x4E3A;&#x526F;&#x672C;&#x96C6; &#xFF0C; &#x6709; 3 &#x4E2A; pod &#x5206;&#x522B;&#x4E3A; zmk6p&#x3001;th9f8&#x3001;28689</p>
+<ul>
+<li>&#x5220;&#x9664;&#x6700;&#x540E;&#x4E00;&#x4E2A; pod &#x4F1A;&#x518D;&#x751F;&#x6210;&#x65B0;&#x7684; pod</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl delete pod nginx-deploy-5964889c54-28689
+pod <span class="hljs-string">&quot;nginx-deploy-5964889c54-28689&quot;</span> deleted
+<span class="hljs-comment"># &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x751F;&#x6210;&#x4E86;&#x65B0;&#x7684;pod k9xnj&#xFF0C;&#x4F53;&#x73B0;&#x4E86; deploy &#x4F7F;pod&#x62E5;&#x6709;&#x7684;&#x81EA;&#x6108;&#x80FD;&#x529B;</span>
+$ kubectl get pod
+NAME                            READY   STATUS    RESTARTS   AGE
+nginx-deploy-5964889c54-zmk6p   1/1     Running   0          9m29s
+nginx-deploy-5964889c54-th9f8   1/1     Running   0          9m29s
+nginx-deploy-5964889c54-k9xnj   1/1     Running   0          13s
+</code></pre>
+<h2 id="&#x7F29;&#x653E;"><a name="&#x7F29;&#x653E;" class="anchor-navigation-ex-anchor" href="#&#x7F29;&#x653E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F29;&#x653E;</h2>
+<ul>
+<li>&#x624B;&#x52A8;&#x7F29;&#x653E;</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x526F;&#x672C;&#x6269;&#x5BB9;&#x5230;5&#x4E2A;</span>
+$ kubectl scale deploy nginx-deploy --replicas=5
+</code></pre>
+<p>&#x6269;&#x5BB9;&#x8FC7;&#x7A0B;</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># DESIRED &#x76EE;&#x6807;  CURRENT &#x5F53;&#x524D;   READY &#x51C6;&#x5907;&#x5C31;&#x7EEA;</span>
+$ kubectl get rs --watch
+NAME                      DESIRED   CURRENT   READY   AGE
+nginx-deploy-5964889c54   3         3         3       12m
+nginx-deploy-5964889c54   5         3         3       13m // Step A
+nginx-deploy-5964889c54   5         3         3       13m
+nginx-deploy-5964889c54   5         4         3       13m // Step B
+nginx-deploy-5964889c54   5         5         3       13m // Step C
+nginx-deploy-5964889c54   5         5         4       13m // Step D
+nginx-deploy-5964889c54   5         5         5       13m // Step E
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5728;&#x89C2;&#x6D4B;&#x526F;&#x672C;&#x65F6;&#x8FC7;&#x7A0B;</p>
+<ol>
+<li>&#x6267;&#x884C;&#x4E86;&#x6269;&#x5BB9;&#x540E; DESIRED &#x5C31;&#x53D8;&#x6210;&#x4E86; 5 (Step A)</li>
+<li>CURRENT &#x53D8;&#x6210; 4&#xFF0C; &#x8BC1;&#x660E; &#x542F;&#x52A8;&#x4E86;&#x4E00;&#x4E2A; pod&#xFF0C;READY &#x8FD8;&#x662F; 3&#xFF0C; &#x8BF4;&#x660E;&#x8FD8;&#x6CA1;&#x542F;&#x52A8;&#x5B8C;&#x6210; (Step B)</li>
+<li>CURRENT &#x53D8;&#x6210; 5&#xFF0C; &#x8BC1;&#x660E; &#x53C8;&#x542F;&#x52A8;&#x4E86;&#x4E00;&#x4E2A; pod&#xFF0C;READY &#x8FD8;&#x662F; 3&#xFF0C; &#x8BF4;&#x660E;&#x8FD8;&#x6CA1;&#x542F;&#x52A8;&#x5B8C;&#x6210; (Step C)</li>
+<li>READY &#x53D8;&#x6210;&#x4E86; 4&#xFF0C; &#x8BF4;&#x660E;&#x6210;&#x529F;&#x8FD0;&#x884C;&#x4E86;&#x4E00;&#x4E2A; pod (Step D)</li>
+<li>READY &#x53D8;&#x6210;&#x4E86; 5&#xFF0C; &#x8BF4;&#x660E;&#x53C8;&#x6210;&#x529F;&#x8FD0;&#x884C;&#x4E86;&#x4E00;&#x4E2A; pod, &#x8FD9;&#x6837; READY &#x548C; DESIRED &#x76F8;&#x7B49;&#xFF0C;&#x6269;&#x5BB9;&#x5B8C;&#x6210; (Step D)</li>
+</ol>
+<p>&#x8C03;&#x6574;&#x56DE;&#x53BB;</p>
+<pre><code class="lang-sh">$ kubectl scale deploy nginx-deploy --replicas=3
+</code></pre>
+<p>&#x8FC7;&#x7A0B;</p>
+<pre><code class="lang-sh">$ kubectl get rs --watch
+NAME                      DESIRED   CURRENT   READY   AGE
+nginx-deploy-5964889c54   5         5         5       27m
+nginx-deploy-5964889c54   3         5         5       28m
+nginx-deploy-5964889c54   3         5         5       28m
+nginx-deploy-5964889c54   3         3         3       28m
+</code></pre>
+<ul>
+<li>&#x81EA;&#x52A8;&#x7F29;&#x653E;</li>
+</ul>
+<p>&#x81EA;&#x52A8;&#x7F29;&#x653E;&#x901A;&#x8FC7;&#x589E;&#x52A0;&#x548C;&#x51CF;&#x5C11;&#x526F;&#x672C;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x4EE5;&#x4FDD;&#x6301;&#x6240;&#x6709; Pod &#x7684;&#x5E73;&#x5747; CPU &#x5229;&#x7528;&#x7387;&#x4E0D;&#x8D85;&#x8FC7; 75%&#x3002;
+&#x81EA;&#x52A8;&#x4F38;&#x7F29;&#x9700;&#x8981;&#x58F0;&#x660E; Pod &#x7684;&#x8D44;&#x6E90;&#x9650;&#x5236;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528; <a href="https://github.com/kubernetes-sigs/metrics-server#readme" target="_blank">Metrics Server &#x670D;&#x52A1;</a>&#xFF08;K3s &#x9ED8;&#x8BA4;&#x5DF2;&#x5B89;&#x88C5;&#xFF09;&#x3002;</p>
+<p></p><p class="r">&#x672C;&#x4F8B;&#x4EC5;&#x7528;&#x6765;&#x8BF4;&#x660E;kubectl autoscale&#x547D;&#x4EE4;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x5B8C;&#x6574;&#x793A;&#x4F8B;&#x53C2;&#x8003;&#xFF1A;<a href="https://kubernetes.io/zh-cn/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/" target="_blank">HPA&#x6F14;&#x793A;</a></p><p></p>
+<pre><code class="lang-sh"><span class="hljs-comment">#&#x81EA;&#x52A8;&#x7F29;&#x653E;</span>
+kubectl autoscale deployment/nginx-auto --min=3 --max=10 --cpu-percent=75
+<span class="hljs-comment">#&#x67E5;&#x770B;&#x81EA;&#x52A8;&#x7F29;&#x653E;</span>
+kubectl get hpa
+<span class="hljs-comment">#&#x5220;&#x9664;&#x81EA;&#x52A8;&#x7F29;&#x653E;</span>
+kubectl delete hpa nginx-deployment
+</code></pre>
+<h2 id="&#x6EDA;&#x52A8;&#x66F4;&#x65B0;"><a name="&#x6EDA;&#x52A8;&#x66F4;&#x65B0;" class="anchor-navigation-ex-anchor" href="#&#x6EDA;&#x52A8;&#x66F4;&#x65B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6EDA;&#x52A8;&#x66F4;&#x65B0;</h2>
+<ul>
+<li>&#x8BBE;&#x7F6E;&#x955C;&#x50CF;&#x4E3A; 1.23</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl <span class="hljs-built_in">set</span> image deploy/nginx-deploy nginx=nginx:1.23
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x6EDA;&#x52A8;&#x66F4;&#x65B0;&#x72B6;&#x6001;</span>
+$ kubectl rollout status deployment/nginx-deploy
+deployment <span class="hljs-string">&quot;nginx-deploy&quot;</span> successfully rolled out
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x7248;&#x672C;&#x548C; pod</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl get deploy/nginx-deploy -owide
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+nginx-deploy   3/3     3            3           39m   nginx        nginx:1.23   app=nginx-deploy
+</code></pre>
+<ul>
+<li>&#x8FC7;&#x7A0B;&#x53CA;&#x8BF4;&#x660E;</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl get rs --watch
+NAME                      DESIRED   CURRENT   READY   AGE
+nginx-deploy-5964889c54   3         3         3       35m
+nginx-deploy-7c88b8c7c9   1         0         0       0s  // Step 1
+nginx-deploy-7c88b8c7c9   1         0         0       0s
+nginx-deploy-7c88b8c7c9   1         1         0       0s  // Step 2
+nginx-deploy-7c88b8c7c9   1         1         1       22s // Step 3
+nginx-deploy-5964889c54   2         3         3       37m // Step 4
+nginx-deploy-5964889c54   2         3         3       37m
+nginx-deploy-5964889c54   2         2         2       37m // Step 5
+nginx-deploy-7c88b8c7c9   2         1         1       23s // Step 6
+nginx-deploy-7c88b8c7c9   2         1         1       23s
+nginx-deploy-7c88b8c7c9   2         2         1       23s
+nginx-deploy-7c88b8c7c9   2         2         2       43s // Step 7
+nginx-deploy-5964889c54   1         2         2       37m
+nginx-deploy-7c88b8c7c9   3         2         2       43s
+nginx-deploy-5964889c54   1         2         2       37m
+nginx-deploy-5964889c54   1         1         1       37m
+nginx-deploy-7c88b8c7c9   3         2         2       43s
+nginx-deploy-7c88b8c7c9   3         3         2       43s
+nginx-deploy-7c88b8c7c9   3         3         3       63s
+nginx-deploy-5964889c54   0         1         1       37m
+nginx-deploy-5964889c54   0         1         1       37m
+nginx-deploy-5964889c54   0         0         0       37m
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x5230; 7c88b8c7c9 &#x4E3A;&#x65B0;&#x90E8;&#x7F72; nginx &#x7684; deploy&#xFF0C; 5964889c54 &#x4E3A; &#x4E4B;&#x524D;&#x90E8;&#x7F72;&#x7684; nginx &#x7684; deploy</p>
+<p>step:</p>
+<ol>
+<li>&#x65B0; deploy &#x76EE;&#x6807;&#x4E3A; 1 &#x4E2A; pod&#xFF0C;&#x5F53;&#x524D;&#x548C;&#x5C31;&#x7EEA;&#x4E3A; 0</li>
+<li>&#x65B0; deploy 1 &#x4E2A;&#x6B63;&#x5728; &#x542F;&#x52A8;</li>
+<li>&#x65B0; deploy &#x6210;&#x529F;&#x542F;&#x52A8; 1 &#x4E2A;</li>
+<li>&#x65E7; deploy &#x51C6;&#x5907;&#x51CF;&#x5C11;&#x4E00;&#x4E2A;</li>
+<li>&#x65E7; deploy &#x51CF;&#x5C11;&#x4E00;&#x4E2A;&#x5B8C;&#x6210;</li>
+<li>&#x65B0; deploy &#x51C6;&#x5907;&#x518D;&#x8D77; 1 &#x4E2A; pod</li>
+<li>&#x65B0; deploy &#x6210;&#x529F;&#x53C8;&#x542F;&#x52A8;&#x4E86; 1 &#x4E2A; pod</li>
+</ol>
+<p>&#x540E;&#x7EED;&#x6B65;&#x9AA4;&#x540C;&#x7406;&#x76F4;&#x5230; &#x65B0; deploy &#x6EE1;&#x8DB3;&#x8981;&#x6C42; &#x65E7; deploy &#x505C;&#x6B62;&#x6240;&#x6709; pod&#xFF0C;&#x526F;&#x672C;&#x96C6;&#x6E05; 0</p>
+<ul>
+<li>&#x7248;&#x672C;&#x56DE;&#x6EDA;</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-comment">#&#x67E5;&#x770B;&#x5386;&#x53F2;&#x7248;&#x672C;</span>
+$ kubectl rollout <span class="hljs-built_in">history</span> deployment/nginx-deploy
+deployment.apps/nginx-deploy
+REVISION  CHANGE-CAUSE
+1         &lt;none&gt;
+2         &lt;none&gt;
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x7248;&#x672C;1&#x8BE6;&#x60C5; 5964889c54 &#x4E3A;&#x7248;&#x672C;1 hash&#x503C;</span>
+$ kubectl rollout <span class="hljs-built_in">history</span> deployment/nginx-deploy --revision=1
+deployment.apps/nginx-deploy with revision <span class="hljs-comment">#1</span>
+Pod Template:
+  Labels:       app=nginx-deploy
+        pod-template-hash=5964889c54
+  Containers:
+   nginx:
+    Image:      nginx:1.22
+    Port:       &lt;none&gt;
+    Host Port:  &lt;none&gt;
+    Environment:        &lt;none&gt;
+    Mounts:     &lt;none&gt;
+  Volumes:      &lt;none&gt;
+<span class="hljs-comment">#&#x56DE;&#x6EDA;&#x5230;&#x5386;&#x53F2;&#x7248;&#x672C;</span>
+$ kubectl rollout undo deployment/nginx-deploy --to-revision=1
+deployment.apps/nginx-deploy rolled back
+</code></pre>
+<p>&#x56DE;&#x6EDA;&#x8FC7;&#x7A0B;</p>
+<pre><code class="lang-sh">$ kubectl get rs --watch
+NAME                      DESIRED   CURRENT   READY   AGE
+nginx-deploy-7c88b8c7c9   3         3         3       20m
+nginx-deploy-5964889c54   0         0         0       57m
+nginx-deploy-5964889c54   0         0         0       57m
+nginx-deploy-5964889c54   1         0         0       57m
+nginx-deploy-5964889c54   1         0         0       57m
+nginx-deploy-5964889c54   1         1         0       57m
+nginx-deploy-5964889c54   1         1         1       57m
+nginx-deploy-7c88b8c7c9   2         3         3       21m
+nginx-deploy-7c88b8c7c9   2         3         3       21m
+nginx-deploy-5964889c54   2         1         1       57m
+nginx-deploy-7c88b8c7c9   2         2         2       21m
+nginx-deploy-5964889c54   2         1         1       57m
+nginx-deploy-5964889c54   2         2         1       57m
+nginx-deploy-5964889c54   2         2         2       57m
+nginx-deploy-7c88b8c7c9   1         2         2       21m
+nginx-deploy-5964889c54   3         2         2       57m
+nginx-deploy-7c88b8c7c9   1         2         2       21m
+nginx-deploy-7c88b8c7c9   1         1         1       21m
+nginx-deploy-5964889c54   3         2         2       57m
+nginx-deploy-5964889c54   3         3         2       57m
+nginx-deploy-5964889c54   3         3         3       57m
+nginx-deploy-7c88b8c7c9   0         1         1       21m
+nginx-deploy-7c88b8c7c9   0         1         1       21m
+nginx-deploy-7c88b8c7c9   0         0         0       21m
+</code></pre>
+<p>&#x67E5;&#x770B;&#x56DE;&#x6EDA;&#x540E;&#x7684;&#x72B6;&#x6001;</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x67E5;&#x770B;&#x526F;&#x672C;&#x96C6;&#x72B6;&#x6001;</span>
+$ kubectl get rs
+NAME                      DESIRED   CURRENT   READY   AGE
+nginx-deploy-5964889c54   3         3         3       59m
+nginx-deploy-7c88b8c7c9   0         0         0       22m
+<span class="hljs-comment"># &#x67E5;&#x770B;pod&#x72B6;&#x6001;&#xFF0C;&#x53D1;&#x73B0;&#x526F;&#x672C;&#x96C6;&#x56DE;&#x6EDA;&#x4E86;</span>
+$ kubectl get pod
+NAME                            READY   STATUS    RESTARTS   AGE
+nginx-deploy-5964889c54-fkd8t   1/1     Running   0          2m31s
+nginx-deploy-5964889c54-lnd79   1/1     Running   0          2m30s
+nginx-deploy-5964889c54-tfdf7   1/1     Running   0          2m28s
+</code></pre>
+<p>&#x5220;&#x9664;&#x65E0;&#x7528;&#x526F;&#x672C;&#x96C6;</p>
+<pre><code class="lang-sh">$ kubectl delete rs nginx-deploy-7c88b8c7c9
+replicaset.apps <span class="hljs-string">&quot;nginx-deploy-7c88b8c7c9&quot;</span> deleted
+</code></pre>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;<br><a href="https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/replicaset/" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/replicaset/</a>
+<a href="https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/deployment/" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/deployment/</a>
+<a href="https://kubernetes.io/zh-cn/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/" target="_blank">https://kubernetes.io/zh-cn/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pod.html" class="navigation navigation-prev " aria-label="Previous page: Pod(容器集)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="service.html" class="navigation navigation-next " aria-label="Next page: Service(服务)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Deployment(部署)与 ReplicaSet(副本集)","level":"1.2.6","depth":2,"next":{"title":"Service(服务)","level":"1.2.7","depth":2,"path":"base/service.md","ref":"base/service.md","articles":[]},"previous":{"title":"Pod(容器集)","level":"1.2.5","depth":2,"path":"base/pod.md","ref":"base/pod.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["back-to-top-button","-lunr","-search","search-plus","a-import","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"a-import":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"base/deployment_replicaset.md","mtime":"2023-10-24T03:14:10.024Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-24T09:51:49.848Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

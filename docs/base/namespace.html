@@ -1,0 +1,516 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Namespace(命名空间) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="declaration.html" />
+    
+    
+    <link rel="prev" href="service.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="intro.html">
+            
+                <a href="intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="architecture.html">
+            
+                <a href="architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="minikube.html">
+            
+                <a href="minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="env_k3s.html">
+            
+                <a href="env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="pod.html">
+            
+                <a href="pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="deployment_replicaset.html">
+            
+                <a href="deployment_replicaset.html">
+            
+                    
+                    Deployment(部署)与 ReplicaSet(副本集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="service.html">
+            
+                <a href="service.html">
+            
+                    
+                    Service(服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.8" data-path="namespace.html">
+            
+                <a href="namespace.html">
+            
+                    
+                    Namespace(命名空间)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="declaration.html">
+            
+                <a href="declaration.html">
+            
+                    
+                    声明式对象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Namespace(命名空间)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#namespace&#x547D;&#x540D;&#x7A7A;&#x95F4;"><b></b>Namespace(&#x547D;&#x540D;&#x7A7A;&#x95F4;)</a></li><ul><li><span class="title-icon "></span><a href="#kubernetes-&#x4F1A;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x521D;&#x59CB;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;"><b></b>Kubernetes &#x4F1A;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x521D;&#x59CB;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><b></b>&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;</a></li><li><span class="title-icon "></span><a href="#&#x7BA1;&#x7406;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><b></b>&#x7BA1;&#x7406;&#x547D;&#x540D;&#x7A7A;&#x95F4;</a></li><li><span class="title-icon "></span><a href="#&#x5207;&#x6362;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><b></b>&#x5207;&#x6362;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;</a></li><li><span class="title-icon "></span><a href="#&#x5220;&#x9664;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><b></b>&#x5220;&#x9664;&#x547D;&#x540D;&#x7A7A;&#x95F4;</a></li></ul></ul></div><a href="#namespace&#x547D;&#x540D;&#x7A7A;&#x95F4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="namespace&#x547D;&#x540D;&#x7A7A;&#x95F4;"><a name="namespace&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="anchor-navigation-ex-anchor" href="#namespace&#x547D;&#x540D;&#x7A7A;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>Namespace(&#x547D;&#x540D;&#x7A7A;&#x95F4;)</h1>
+<p>&#x547D;&#x540D;&#x7A7A;&#x95F4;(Namespace)&#x662F;&#x4E00;&#x79CD;&#x8D44;&#x6E90;&#x9694;&#x79BB;&#x673A;&#x5236;&#xFF0C;&#x5C06;&#x540C;&#x4E00;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x5212;&#x5206;&#x4E3A;&#x76F8;&#x4E92;&#x9694;&#x79BB;&#x7684;&#x7EC4;&#x3002;
+&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x5212;&#x5206;&#x96C6;&#x7FA4;&#x8D44;&#x6E90;&#xFF08;&#x901A;&#x8FC7;<a href="https://kubernetes.io/zh-cn/docs/concepts/policy/resource-quotas/" target="_blank">&#x8D44;&#x6E90;&#x914D;&#x989D;</a>&#xFF09;&#x3002;</p>
+<ul>
+<li>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x5F00;&#x53D1;&#x3001;&#x6D4B;&#x8BD5;&#x3001;&#x751F;&#x4EA7;&#x7B49;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</li>
+</ul>
+<p>&#x540C;&#x4E00;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5185;&#x7684;&#x8D44;&#x6E90;&#x540D;&#x79F0;&#x8981;&#x552F;&#x4E00;&#xFF0C;&#x4F46;&#x8DE8;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x65F6;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x8981;&#x6C42;&#x3002;
+&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4F5C;&#x7528;&#x57DF;&#x4EC5;&#x9488;&#x5BF9;&#x5E26;&#x6709;&#x540D;&#x5B57;&#x7A7A;&#x95F4;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F8B;&#x5982; Deployment&#x3001;Service &#x7B49;&#x3002;
+&#x8FD9;&#x79CD;&#x4F5C;&#x7528;&#x57DF;&#x5BF9;&#x96C6;&#x7FA4;&#x8BBF;&#x95EE;&#x7684;&#x5BF9;&#x8C61;&#x4E0D;&#x9002;&#x7528;&#xFF0C;&#x4F8B;&#x5982; StorageClass&#x3001;Node&#x3001;PersistentVolume &#x7B49;&#x3002;</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x67E5;&#x770B;&#x547D;&#x540D;&#x7A7A;&#x95F4; &#x7F29;&#x5199; ns</span>
+$ kubectl get namespace
+NAME              STATUS   AGE
+default           Active   4d15h
+kube-system       Active   4d15h
+kube-public       Active   4d15h
+kube-node-lease   Active   4d15h
+</code></pre>
+<hr>
+<h2 id="kubernetes-&#x4F1A;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x521D;&#x59CB;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;"><a name="kubernetes-&#x4F1A;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x521D;&#x59CB;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;" class="anchor-navigation-ex-anchor" href="#kubernetes-&#x4F1A;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x521D;&#x59CB;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;"><i class="fa fa-link" aria-hidden="true"></i></a>Kubernetes &#x4F1A;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x521D;&#x59CB;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF1A;</h2>
+<ul>
+<li>default &#x9ED8;&#x8BA4;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x4E0D;&#x53EF;&#x5220;&#x9664;&#xFF0C;&#x672A;&#x6307;&#x5B9A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x5230; default &#x4E2D;&#x3002;</li>
+<li>kube-system Kubernetes &#x7CFB;&#x7EDF;&#x5BF9;&#x8C61;(&#x63A7;&#x5236;&#x5E73;&#x9762;&#x548C; Node &#x7EC4;&#x4EF6;)&#x6240;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</li>
+<li>kube-public &#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x7684;&#x516C;&#x5171;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF0C;&#x6240;&#x6709;&#x7528;&#x6237;&#xFF08;&#x5305;&#x62EC;&#x672A;&#x7ECF;&#x8FC7;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x7684;&#x7528;&#x6237;&#xFF09;&#x90FD;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x5B83;&#x3002;&#x901A;&#x5E38;&#x6211;&#x4EEC;&#x7EA6;&#x5B9A;&#xFF0C;&#x5C06;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#x516C;&#x7528;&#x7684;&#x53EF;&#x89C1;&#x548C;&#x53EF;&#x8BFB;&#x7684;&#x8D44;&#x6E90;&#x653E;&#x5728;&#x8FD9;&#x4E2A;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;</li>
+<li>kube-node-lease <a href="https://kubernetes.io/docs/reference/kubernetes-api/cluster-resources/lease-v1/" target="_blank">&#x79DF;&#x7EA6;&#xFF08;Lease&#xFF09;</a>&#x5BF9;&#x8C61;&#x4F7F;&#x7528;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x5173;&#x8054;&#x7684; lease &#x5BF9;&#x8C61;&#xFF0C;lease &#x662F;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7EA7;&#x8D44;&#x6E90;&#x3002;lease &#x5BF9;&#x8C61;&#x901A;&#x8FC7;&#x53D1;&#x9001;&#x5FC3;&#x8DF3;&#xFF0C;&#x68C0;&#x6D4B;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x662F;&#x5426;&#x53D1;&#x751F;&#x6545;&#x969C;&#x3002;</li>
+</ul>
+<p class="r">&#x4F7F;&#x7528; kubectl get lease -A &#x67E5;&#x770B; lease &#x5BF9;&#x8C61;</p>
+
+<ul>
+<li>kubenetes &#x7684;&#x7EC4;&#x4EF6;&#x90FD;&#x8FD0;&#x884C;&#x5728; kube-system &#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;, &#x81EA;&#x5DF1;&#x90E8;&#x7F72;&#x7684;&#x5728; default &#x76EE;&#x5F55;&#x4E0B;</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl get pod -A
+NAMESPACE     NAME                                     READY   STATUS      RESTARTS         AGE
+kube-system   helm-install-traefik-crd-bjf84           0/1     Completed   0                4d15h
+kube-system   helm-install-traefik-bcrr6               0/1     Completed   5                4d15h
+kube-system   svclb-traefik-c090484e-hwms9             2/2     Running     2 (3d11h ago)    4d15h
+kube-system   svclb-traefik-c090484e-4rlrg             2/2     Running     2 (3d11h ago)    4d15h
+kube-system   coredns-77ccd57875-rf6s4                 1/1     Running     10 (3d11h ago)   4d15h
+kube-system   svclb-traefik-c090484e-cnsgm             2/2     Running     2 (3d11h ago)    4d15h
+kube-system   <span class="hljs-built_in">local</span>-path-provisioner-957fdf8bc-dw92l   1/1     Running     0                4d15h
+kube-system   metrics-server-648b5df564-tnzrm          1/1     Running     30 (3d11h ago)   4d15h
+kube-system   traefik-64f55bb67d-bhb49                 1/1     Running     28 (3d11h ago)   4d15h
+default       nginx-deploy-5964889c54-fkd8t            1/1     Running     0                152m
+default       nginx-deploy-5964889c54-lnd79            1/1     Running     0                152m
+default       nginx-deploy-5964889c54-tfdf7            1/1     Running     0                152m
+</code></pre>
+<ul>
+<li>&#x65B0;&#x7248;&#x672C; apiserver &#x4E5F;&#x662F;&#x4E00;&#x4E2A; lease &#x5BF9;&#x8C61;</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl get lease -A
+NAMESPACE         NAME                                   HOLDER                                                                      AGE
+kube-node-lease   k3d-demo-agent-0                       k3d-demo-agent-0                                                            4d15h
+kube-node-lease   k3d-demo-agent-1                       k3d-demo-agent-1                                                            4d15h
+kube-node-lease   k3d-demo-server-0                      k3d-demo-server-0                                                           4d15h
+kube-system       apiserver-tbovar5ze2pqx4h6gvtcm557sm   apiserver-tbovar5ze2pqx4h6gvtcm557sm_8167404a-b62f-45fb-81e8-72eddaf1aaf8   4d15h
+</code></pre>
+<hr>
+<h2 id="&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><a name="&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h2>
+<ul>
+<li>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x662F;&#x5728;&#x591A;&#x4E2A;&#x7528;&#x6237;&#x4E4B;&#x95F4;&#x5212;&#x5206;&#x96C6;&#x7FA4;&#x8D44;&#x6E90;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#xFF08;&#x901A;&#x8FC7;&#x8D44;&#x6E90;&#x914D;&#x989D;&#xFF09;&#x3002;<ul>
+<li>&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<strong>&#x5F00;&#x53D1;</strong>&#x3001;<strong>&#x6D4B;&#x8BD5;</strong>&#x3001;<strong>&#x751F;&#x4EA7;</strong>&#x7B49;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</li>
+</ul>
+</li>
+<li>&#x4E0D;&#x5FC5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x6765;&#x5206;&#x9694;&#x8F7B;&#x5FAE;&#x4E0D;&#x540C;&#x7684;&#x8D44;&#x6E90;&#x3002;<ul>
+<li>&#x4F8B;&#x5982;&#x540C;&#x4E00;&#x8F6F;&#x4EF6;&#x7684;&#x4E0D;&#x540C;&#x7248;&#x672C;&#xFF1A; &#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x6807;&#x7B7E; &#x6765;&#x533A;&#x5206;&#x540C;&#x4E00;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E0D;&#x540C;&#x8D44;&#x6E90;&#x3002;</li>
+</ul>
+</li>
+<li>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x9002;&#x7528;&#x4E8E;&#x8DE8;&#x591A;&#x4E2A;&#x56E2;&#x961F;&#x6216;&#x9879;&#x76EE;&#x7684;&#x573A;&#x666F;&#x3002;<ul>
+<li>&#x5BF9;&#x4E8E;&#x53EA;&#x6709;&#x51E0;&#x5230;&#x51E0;&#x5341;&#x4E2A;&#x7528;&#x6237;&#x7684;&#x96C6;&#x7FA4;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x7528;&#x521B;&#x5EFA;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</li>
+</ul>
+</li>
+<li>&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0D;&#x80FD;&#x76F8;&#x4E92;&#x5D4C;&#x5957;&#xFF0C;&#x6BCF;&#x4E2A; Kubernetes &#x8D44;&#x6E90;&#x53EA;&#x80FD;&#x5728;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x3002;</li>
+</ul>
+<hr>
+<h2 id="&#x7BA1;&#x7406;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><a name="&#x7BA1;&#x7406;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="anchor-navigation-ex-anchor" href="#&#x7BA1;&#x7406;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7BA1;&#x7406;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h2>
+<pre><code class="lang-sh"><span class="hljs-comment">#&#x521B;&#x5EFA;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+$ kubectl create ns develop
+namespace/develop created
+
+<span class="hljs-comment">#&#x5728;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5185;&#x8FD0;&#x884C;Pod --namespace &#x7B49;&#x4EF7;&#x4E8E; -n</span>
+<span class="hljs-comment"># kubectl run my-nginx --image=nginx -n=dev</span>
+$ kubectl run nginx --image=nginx:1.22 --namespace=develop
+pod/nginx created
+
+<span class="hljs-comment">#&#x67E5;&#x770B;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5185;&#x7684;Pod</span>
+$ kubectl get pod -n=develop
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          37s
+
+<span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x662F; default &#x4E0B;&#x7684;&#x547D;&#x540D;&#x7A7A;&#x95F4;</span>
+$ kubectl get pod
+NAME                            READY   STATUS    RESTARTS   AGE
+nginx-deploy-5964889c54-fkd8t   1/1     Running   0          161m
+nginx-deploy-5964889c54-lnd79   1/1     Running   0          161m
+nginx-deploy-5964889c54-tfdf7   1/1     Running   0          161m
+</code></pre>
+<h2 id="&#x5207;&#x6362;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><a name="&#x5207;&#x6362;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="anchor-navigation-ex-anchor" href="#&#x5207;&#x6362;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5207;&#x6362;&#x5F53;&#x524D;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h2>
+<pre><code class="lang-sh">$ kubectl config <span class="hljs-built_in">set</span>-context $(kubectl config current-context) --namespace=develop
+<span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5C31;&#x6539;&#x53D8;&#x4E3A; develop &#x4E86;</span>
+$ kubectl get pod
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          3m25s
+</code></pre>
+<h2 id="&#x5220;&#x9664;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><a name="&#x5220;&#x9664;&#x547D;&#x540D;&#x7A7A;&#x95F4;" class="anchor-navigation-ex-anchor" href="#&#x5220;&#x9664;&#x547D;&#x540D;&#x7A7A;&#x95F4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5220;&#x9664;&#x547D;&#x540D;&#x7A7A;&#x95F4;</h2>
+<pre><code class="lang-sh">$ kubectl delete ns develop
+namespace <span class="hljs-string">&quot;develop&quot;</span> deleted
+<span class="hljs-comment"># &#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&#x88AB;&#x6539;&#x4E3A; develop &#x4F46;&#x73B0;&#x5728;develop &#x88AB;&#x5220;&#x9664;&#x4E86;</span>
+$ kubectl get pod
+No resources found <span class="hljs-keyword">in</span> develop namespace.
+<span class="hljs-comment"># &#x67E5;&#x770B;ns&#x72B6;&#x6001;</span>
+$ kubectl get ns
+NAME              STATUS   AGE
+default           Active   4d15h
+kube-system       Active   4d15h
+kube-public       Active   4d15h
+kube-node-lease   Active   4d15h
+<span class="hljs-comment"># &#x5207;&#x6362;&#x4E3A;default</span>
+$ kubectl config <span class="hljs-built_in">set</span>-context $(kubectl config current-context) --namespace=default
+$ kubectl get pod
+NAME                            READY   STATUS    RESTARTS   AGE
+nginx-deploy-5964889c54-fkd8t   1/1     Running   0          6h6m
+nginx-deploy-5964889c54-lnd79   1/1     Running   0          6h6m
+nginx-deploy-5964889c54-tfdf7   1/1     Running   0          6h6m
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="service.html" class="navigation navigation-prev " aria-label="Previous page: Service(服务)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="declaration.html" class="navigation navigation-next " aria-label="Next page: 声明式对象配置">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Namespace(命名空间)","level":"1.2.8","depth":2,"next":{"title":"声明式对象配置","level":"1.2.9","depth":2,"path":"base/declaration.md","ref":"base/declaration.md","articles":[]},"previous":{"title":"Service(服务)","level":"1.2.7","depth":2,"path":"base/service.md","ref":"base/service.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["back-to-top-button","-lunr","-search","search-plus","a-import","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"a-import":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"base/namespace.md","mtime":"2023-10-24T09:09:56.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-24T09:51:49.848Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

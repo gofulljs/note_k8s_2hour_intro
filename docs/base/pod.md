@@ -137,34 +137,170 @@ Docker没有实现（CRI）接口，Kubernetes使用dockershim来兼容docker。
 
 `crictl`是一个兼容 CRI 的容器运行时命令，他的用法跟 `docker` 命令一样，可以用来检查和调试底层的运行时容器。
 
+- 查看容器和镜像
+
 ```sh
-crictl pull mysql:5.7-debian
-crictl images
+# 查看容器
+$ crictl ps
+CONTAINER           IMAGE               CREATED             STATE               NAME                ATTEMPT             POD ID              POD
+47aaa00baba1e       0f8498f13f3ad       7 hours ago         Running             nginx               0                   ad79f75bc4e04       nginx-deploy-5964889c54-fkd8t
+2c47bdd5aaa26       ead0a4a53df89       3 days ago          Running             coredns             10                  05fbcfa8067b8       coredns-77ccd57875-rf6s4
+f1bcf4785b184       af74bd845c4a8       3 days ago          Running             lb-tcp-443          1                   d793ffcccf6fe       svclb-traefik-c090484e-cnsgm
+2cc1af75acf27       af74bd845c4a8       3 days ago          Running             lb-tcp-80           1                   d793ffcccf6fe       svclb-traefik-c090484e-cnsgm
+# 查看镜像
+$ crictl images
+IMAGE                                        TAG                    IMAGE ID            SIZE
+docker.io/library/nginx                      1.22                   0f8498f13f3ad       57MB
+docker.io/library/nginx                      1.23                   a7be6198544f0       57MB
+docker.io/rancher/klipper-helm               v0.8.0-build20230510   6f42df210d7fa       95MB
+docker.io/rancher/klipper-lb                 v0.4.4                 af74bd845c4a8       4.92MB
+docker.io/rancher/mirrored-coredns-coredns   1.10.1                 ead0a4a53df89       16.2MB
+docker.io/rancher/mirrored-pause             3.6                    6270bb605e12e       301kB
+```
+
+- crictl 命令
+
+命令相对 docker 少一些，比如无法导入导出镜像
+
+```sh
+$ crictl -h
+NAME:
+   crictl - client for CRI
+
+USAGE:
+   crictl [global options] command [command options] [arguments...]
+
+VERSION:
+   v1.26.0-rc.0-k3s1
+
+COMMANDS:
+   attach              Attach to a running container
+   create              Create a new container
+   exec                Run a command in a running container
+   version             Display runtime version information
+   images, image, img  List images
+   inspect             Display the status of one or more containers
+   inspecti            Return the status of one or more images
+   imagefsinfo         Return image filesystem info
+   inspectp            Display the status of one or more pods
+   logs                Fetch the logs of a container
+   port-forward        Forward local port to a pod
+   ps                  List containers
+   pull                Pull an image from a registry
+   run                 Run a new container inside a sandbox
+   runp                Run a new pod
+   rm                  Remove one or more containers
+   rmi                 Remove one or more images
+   rmp                 Remove one or more pods
+   pods                List pods
+   start               Start one or more created containers
+   info                Display information of the container runtime
+   stop                Stop one or more running containers
+   stopp               Stop one or more running pods
+   update              Update one or more running containers
+   config              Get and set crictl client configuration options
+   stats               List container(s) resource usage statistics
+   statsp              List pod resource usage statistics
+   completion          Output shell completion code
+   checkpoint          Checkpoint one or more running containers
+   help, h             Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --config value, -c value            Location of the client config file. If not specified and the default does not exist, the program's directory is searched as well (default: "/etc/crictl.yaml") [$CRI_CONFIG_FILE]
+   --debug, -D                         Enable debug mode (default: false)
+   --image-endpoint value, -i value    Endpoint of CRI image manager service (default: uses 'runtime-endpoint' setting) [$IMAGE_SERVICE_ENDPOINT]
+   --runtime-endpoint value, -r value  Endpoint of CRI container runtime service (default: uses in order the first successful one of [unix:///run/k3s/containerd/containerd.sock unix:///var/run/dockershim.sock unix:///run/containerd/containerd.sock unix:///run/crio/crio.sock unix:///var/run/cri-dockerd.sock]). Default is now deprecated and the endpoint should be set instead. [$CONTAINER_RUNTIME_ENDPOINT]
+   --timeout value, -t value           Timeout of connecting to the server in seconds (e.g. 2s, 20s.). 0 or less is set to default (default: 2s)
+   --help, -h                          show help (default: false)
+   --version, -v                       print the version (default: false)
 ```
 
 在一些局域网环境下，我们没法通过互联网拉取镜像，可以手动的导出、导入镜像。
 `crictl` 命令没有导出、导入镜像的功能。
 需要使用 `ctr` 命令导出、导入镜像，它是 `containerd` 的命令行接口。
 
+```sh
+# 只需要掌握导入导出镜像即可
+$ ctr -h
+NAME:
+   ctr -
+        __
+  _____/ /______
+ / ___/ __/ ___/
+/ /__/ /_/ /
+\___/\__/_/
+
+containerd CLI
+
+
+USAGE:
+   ctr [global options] command [command options] [arguments...]
+
+VERSION:
+   v1.7.1-k3s1
+
+DESCRIPTION:
+
+ctr is an unsupported debug and administrative client for interacting
+with the containerd daemon. Because it is unsupported, the commands,
+options, and operations are not guaranteed to be backward compatible or
+stable from release to release of the containerd project.
+
+COMMANDS:
+   plugins, plugin            Provides information about containerd plugins
+   version                    Print the client and server versions
+   containers, c, container   Manage containers
+   content                    Manage content
+   events, event              Display containerd events
+   images, image, i           Manage images
+   leases                     Manage leases
+   namespaces, namespace, ns  Manage namespaces
+   pprof                      Provide golang pprof outputs for containerd
+   run                        Run a container
+   snapshots, snapshot        Manage snapshots
+   tasks, t, task             Manage tasks
+   install                    Install a new package
+   oci                        OCI tools
+   sandboxes, sandbox, sb, s  Manage sandboxes
+   info                       Print the server info
+   shim                       Interact with a shim directly
+   help, h                    Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --debug                      Enable debug output in logs
+   --address value, -a value    Address for containerd's GRPC server (default: "/run/k3s/containerd/containerd.sock") [$CONTAINERD_ADDRESS]
+   --timeout value              Total timeout for ctr commands (default: 0s)
+   --connect-timeout value      Timeout for connecting to containerd (default: 0s)
+   --namespace value, -n value  Namespace to use with commands (default: "k8s.io") [$CONTAINERD_NAMESPACE]
+   --help, -h                   show help
+   --version, -v                print the version
+```
+
 ---
 
 - 从`docker`导出镜像再导入到`containerd`中
 
 ```sh
-docker pull alpine:3.16
-docker save alpine:3.16 > alpine.tar
+$ docker pull alpine:3.15
+$ docker save alpine:3.15 > alpine-3.15.tar
+# 将tar拷贝到对应k8s主机
 
-#kubernetes使用的镜像都在k8s.io命名空间中
-ctr -n k8s.io images import alpine.tar
+#kubernetes使用的镜像都在k8s.io命名空间中, 需要制定对应平台，如linux/amd64
+$ ctr -n k8s.io images import alpine-3.15.tar --platform linux/amd64
+unpacking docker.io/library/alpine:3.15 (sha256:69ba0f584ebec4ccf2ccf44817931f3facfb924380355466495274b2e273fe7b)...done
+
+# 可以看到镜像导入了
+$ crictl images
+IMAGE                                        TAG                    IMAGE ID            SIZE
+docker.io/library/alpine                     3.15                   d51a1e6a80db9       5.87MB
+。。。
 ```
 
 - 从`containerd`导出、导入镜像
 
 ```sh
 #导出镜像
-ctr -n k8s.io images export mysql.tar docker.io/library/mysql:5.7-debian --platform linux/amd64
-#导入镜像
-ctr -n k8s.io images import mysql.tar
+ctr -n k8s.io images export alpine.tar docker.io/library/alpine:3.15 --platform linux/amd64
 ```
 
 参考文档：  
