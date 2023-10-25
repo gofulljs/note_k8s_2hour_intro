@@ -1,0 +1,62 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-password
+type: Opaque
+data:
+  # 加密后的密码
+  PASSWORD: MTIzNDU2Cg==
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-pod
+  labels:
+    app: mysql
+spec:
+  containers:
+    - name: mysql
+      image: mysql:5.7
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-password
+              key: PASSWORD
+              optional: false # 表示不使用默认值
+      volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: data-volume
+        - mountPath: /etc/mysql/conf.d
+          name: conf-volume
+          readOnly: true
+  volumes:
+    - name: conf-volume
+      configMap:
+        name: mysql-config
+    - name: data-volume
+      persistentVolumeClaim:
+        claimName: local-pv-claim
+      # hostPath:
+      #   # directory location on host
+      #   path: /src/mysqldata
+      #   # this field is optional
+      #   type: DirectoryOrCreate
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+data:
+  mysql.cnf: |
+    [mysqld]
+    character-set-server=utf8mb4
+    collation-server=utf8mb4_general_ci
+    init-connect='SET NAMES utf8mb4'
+
+    [client]
+    default-character-set=utf8mb4
+
+    [mysql]
+    default-character-set=utf8mb4
