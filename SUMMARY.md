@@ -21,3 +21,6 @@
   - [存储类(StorageClass)](runapp/storage_class.md)
   - [StatefulSet(有状态应用集)](runapp/stateful_set.md)
   - [Headless Service(无头服务)](runapp/headless_service.md)
+  - [Mysql 主从复制](runapp/mysql_replicate.md)
+  - [Port-forward 端口转发](runapp/port_forward.md)
+  - [Helm安装MySQL机群](runapp/helm.md)

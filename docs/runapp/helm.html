@@ -1,0 +1,833 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Helm安装MySQL机群 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="gofulljs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="port_forward.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../base/">
+            
+                <a href="../base/">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../base/intro.html">
+            
+                <a href="../base/intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../base/architecture.html">
+            
+                <a href="../base/architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../base/minikube.html">
+            
+                <a href="../base/minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../base/env_k3s.html">
+            
+                <a href="../base/env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../base/pod.html">
+            
+                <a href="../base/pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../base/deployment_replicaset.html">
+            
+                <a href="../base/deployment_replicaset.html">
+            
+                    
+                    Deployment(部署)与 ReplicaSet(副本集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../base/service.html">
+            
+                <a href="../base/service.html">
+            
+                    
+                    Service(服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../base/namespace.html">
+            
+                <a href="../base/namespace.html">
+            
+                    
+                    Namespace(命名空间)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../base/declaration.html">
+            
+                <a href="../base/declaration.html">
+            
+                    
+                    声明式对象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../base/canary.html">
+            
+                <a href="../base/canary.html">
+            
+                    
+                    金丝雀发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    运行有状态的应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="create_mysql.html">
+            
+                <a href="create_mysql.html">
+            
+                    
+                    创建 MySQL 数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="configmap_secret.html">
+            
+                <a href="configmap_secret.html">
+            
+                    
+                    ConfigMap 与 Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="volume.html">
+            
+                <a href="volume.html">
+            
+                    
+                    卷(Volume)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="ev.html">
+            
+                <a href="ev.html">
+            
+                    
+                    临时卷(EV)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="persistent_volume.html">
+            
+                <a href="persistent_volume.html">
+            
+                    
+                    持久卷(PV)与持久卷声明(PVC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="storage_class.html">
+            
+                <a href="storage_class.html">
+            
+                    
+                    存储类(StorageClass)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="stateful_set.html">
+            
+                <a href="stateful_set.html">
+            
+                    
+                    StatefulSet(有状态应用集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="headless_service.html">
+            
+                <a href="headless_service.html">
+            
+                    
+                    Headless Service(无头服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="mysql_replicate.html">
+            
+                <a href="mysql_replicate.html">
+            
+                    
+                    Mysql 主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="port_forward.html">
+            
+                <a href="port_forward.html">
+            
+                    
+                    Port-forward 端口转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.11" data-path="helm.html">
+            
+                <a href="helm.html">
+            
+                    
+                    Helm安装MySQL机群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Helm安装MySQL机群</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#helm-&#x5B89;&#x88C5;-mysql-&#x673A;&#x7FA4;"><b></b>Helm &#x5B89;&#x88C5; MySQL &#x673A;&#x7FA4;</a></li><ul><li><span class="title-icon "></span><a href="#helm-&#x7B80;&#x4ECB;"><b></b>Helm &#x7B80;&#x4ECB;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;-helm"><b></b>&#x5B89;&#x88C5; Helm</a></li><li><span class="title-icon "></span><a href="#&#x4E09;&#x5927;&#x6982;&#x5FF5;"><b></b>&#x4E09;&#x5927;&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#helm-&#x4ED3;&#x5E93;"><b></b>Helm &#x4ED3;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#x5355;&#x8282;&#x70B9;-mysql"><b></b>&#x5B89;&#x88C5;&#x5355;&#x8282;&#x70B9; Mysql</a></li><li><span class="title-icon "></span><a href="#helm-&#x90E8;&#x7F72;-mysql-&#x96C6;&#x7FA4;"><b></b>Helm &#x90E8;&#x7F72; MySQL &#x96C6;&#x7FA4;</a></li></ul></ul></div><a href="#helm-&#x5B89;&#x88C5;-mysql-&#x673A;&#x7FA4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="helm-&#x5B89;&#x88C5;-mysql-&#x673A;&#x7FA4;"><a name="helm-&#x5B89;&#x88C5;-mysql-&#x673A;&#x7FA4;" class="anchor-navigation-ex-anchor" href="#helm-&#x5B89;&#x88C5;-mysql-&#x673A;&#x7FA4;"><i class="fa fa-link" aria-hidden="true"></i></a>Helm &#x5B89;&#x88C5; MySQL &#x673A;&#x7FA4;</h1>
+<h2 id="helm-&#x7B80;&#x4ECB;"><a name="helm-&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#helm-&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>Helm &#x7B80;&#x4ECB;</h2>
+<p>Helm(<a href="http://helm.sh/" target="_blank">http://helm.sh/</a>) &#x662F;&#x4E00;&#x4E2A; Kubernetes &#x5E94;&#x7528;&#x7684;&#x5305;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E; Ubuntu &#x7684; APT &#x548C; CentOS &#x4E2D;&#x7684; YUM&#x3002;
+Helm &#x4F7F;&#x7528; chart &#x6765;&#x5C01;&#x88C5; kubernetes &#x5E94;&#x7528;&#x7684; YAML &#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x81EA;&#x5DF1;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x5316;&#x7684;&#x5FEB;&#x901F;&#x90E8;&#x7F72;&#x5E94;&#x7528;&#x3002;
+&#x5B89;&#x88C5; Helm</p>
+<h2 id="&#x5B89;&#x88C5;-helm"><a name="&#x5B89;&#x88C5;-helm" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;-helm"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5; Helm</h2>
+<p>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;&#x5305;&#xFF1A;<br><a href="https://github.com/helm/helm/releases" target="_blank">https://github.com/helm/helm/releases</a>
+<a href="https://get.helm.sh/helm-v3.10.0-linux-amd64.tar.gz" target="_blank">https://get.helm.sh/helm-v3.10.0-linux-amd64.tar.gz</a></p>
+<pre><code class="lang-sh">mv linux-amd64/helm /usr/<span class="hljs-built_in">local</span>/bin/helm
+</code></pre>
+<p>&#x5728; K3s &#x4E2D;&#x4F7F;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</p>
+<pre><code class="lang-sh"><span class="hljs-built_in">export</span> KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+</code></pre>
+<h2 id="&#x4E09;&#x5927;&#x6982;&#x5FF5;"><a name="&#x4E09;&#x5927;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x4E09;&#x5927;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E09;&#x5927;&#x6982;&#x5FF5;</h2>
+<ul>
+<li><strong>Chart</strong> &#x4EE3;&#x8868;&#x7740; Helm &#x5305;&#x3002;<ul>
+<li>&#x5B83;&#x5305;&#x542B;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x8D44;&#x6E90;&#x5B9A;&#x4E49;&#x548C;&#x4F9D;&#x8D56;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x6A21;&#x7248;&#x3002;</li>
+<li>&#x7C7B;&#x4F3C;&#x4E8E; maven &#x4E2D;&#x7684; <code>pom.xml</code>&#x3001;Apt &#x4E2D;&#x7684; <code>dpkb</code> &#x6216; Yum &#x4E2D;&#x7684; <code>RPM</code>&#x3002;</li>
+</ul>
+</li>
+<li><strong>Repository&#xFF08;&#x4ED3;&#x5E93;&#xFF09;</strong> &#x7528;&#x6765;&#x5B58;&#x653E;&#x548C;&#x5171;&#x4EAB; charts&#x3002;<ul>
+<li>&#x4E0D;&#x7528;&#x7684;&#x5E94;&#x7528;&#x653E;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x4ED3;&#x5E93;&#x4E2D;&#x3002;</li>
+</ul>
+</li>
+<li><strong>Release</strong> &#x662F;&#x8FD0;&#x884C; chart &#x7684;&#x5B9E;&#x4F8B;&#x3002;
+&#x4E00;&#x4E2A; chart &#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x96C6;&#x7FA4;&#x4E2D;&#x5B89;&#x88C5;&#x591A;&#x6B21;&#x3002;
+&#x6BCF;&#x4E00;&#x6B21;&#x5B89;&#x88C5;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; release&#xFF0C;<strong><code>release name</code></strong> &#x4E0D;&#x80FD;&#x91CD;&#x590D;&#x3002;</li>
+</ul>
+<h2 id="helm-&#x4ED3;&#x5E93;"><a name="helm-&#x4ED3;&#x5E93;" class="anchor-navigation-ex-anchor" href="#helm-&#x4ED3;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>Helm &#x4ED3;&#x5E93;</h2>
+<p>Helm &#x6709;&#x4E00;&#x4E2A;&#x8DDF; docker Hub &#x7C7B;&#x4F3C;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#x5FC3;(<a href="https://artifacthub.io/)&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x91CC;&#x9762;&#x627E;&#x5230;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x90E8;&#x7F72;&#x7684;&#x5E94;&#x7528;&#x3002;" target="_blank">https://artifacthub.io/)&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x91CC;&#x9762;&#x627E;&#x5230;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x90E8;&#x7F72;&#x7684;&#x5E94;&#x7528;&#x3002;</a></p>
+<h2 id="&#x5B89;&#x88C5;&#x5355;&#x8282;&#x70B9;-mysql"><a name="&#x5B89;&#x88C5;&#x5355;&#x8282;&#x70B9;-mysql" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#x5355;&#x8282;&#x70B9;-mysql"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B89;&#x88C5;&#x5355;&#x8282;&#x70B9; Mysql</h2>
+<p>&#x641C;&#x7D22; <code>mysql</code> &#x8FDB;&#x5165;&#x5305;&#x540D;&#x4E3A; <code>Bitnami</code>&#x7684; chart</p>
+<p><img src="imgs/image-9.png" alt="Alt text"></p>
+<ul>
+<li>INSTALL: &#x5B89;&#x88C5;&#x65B9;&#x5F0F;</li>
+<li>VALUES SCHEMA: &#x5E38;&#x7528;&#x53C2;&#x6570;</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x5B89;&#x88C5;</span>
+$ helm install my-mysql --set-string auth.rootPassword=123456 --set primary.persistence.size=1Gi  bitnami/mysql
+NAME: my-mysqlLAST DEPLOYED: Thu Oct 26 07:41:56 2023NAMESPACE: default
+STATUS: deployedREVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: mysql
+CHART VERSION: 9.14.1
+APP VERSION: 8.0.35
+
+** Please be patient <span class="hljs-keyword">while</span> the chart is being deployed **
+
+Tip:
+
+  Watch the deployment status using the <span class="hljs-built_in">command</span>: kubectl get pods -w --namespace default
+
+Services:
+
+  <span class="hljs-built_in">echo</span> Primary: my-mysql.default.svc.cluster.local:3306
+
+Execute the following to get the administrator credentials:
+
+  <span class="hljs-built_in">echo</span> Username: root
+  MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace default my-mysql -o jsonpath=<span class="hljs-string">&quot;{.data.mysql-root-password}&quot;</span> | base64 <span class="hljs-_">-d</span>)
+
+To connect to your database:
+
+  1. Run a pod that you can use as a client:
+
+      kubectl run my-mysql-client --rm --tty -i --restart=<span class="hljs-string">&apos;Never&apos;</span> --image  docker.io/bitnami/mysql:8.0.35-debian-11-r0 --namespace default --env MYSQL_ROOT_PASSWORD=<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span> --command -- bash
+
+  2. To connect to primary service (<span class="hljs-built_in">read</span>/write):
+
+      mysql -h my-mysql.default.svc.cluster.local -uroot -p<span class="hljs-string">&quot;<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span>&quot;</span>
+<span class="hljs-comment"># &#x67E5;&#x770B;&#x8BBE;&#x7F6E;</span>
+$ helm get values my-mysql
+USER-SUPPLIED VALUES:
+auth:
+  rootPassword: <span class="hljs-string">&quot;123456&quot;</span>
+primary:
+  persistence:
+    size: 1Gi
+<span class="hljs-comment"># &#x5220;&#x9664;&#x672C;&#x6B21; release</span>
+$ helm delete my-mysql
+release <span class="hljs-string">&quot;my-mysql&quot;</span> uninstalled
+</code></pre>
+<p><strong>&#x6CE8;&#x610F;&#x5982;&#x679C;&#x5B89;&#x88C5;&#x5931;&#x8D25;&#xFF0C;&#x9700;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x7684; release &#x540D;&#x79F0;</strong></p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x540C;&#x4E0A;&#x9762;&#x7684;delete</span>
+$ helm uninstall my-mysql
+release <span class="hljs-string">&quot;my-mysql&quot;</span> uninstalled
+</code></pre>
+<p>&#x5176;&#x4ED6;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-sh"><span class="hljs-comment">#&#x67E5;&#x770B;chart</span>
+helm show chart bitnami/mysql
+<span class="hljs-comment">#&#x67E5;&#x770B;&#x9ED8;&#x8BA4;&#x503C;</span>
+helm show values bitnami/mysql
+</code></pre>
+<hr>
+<h2 id="helm-&#x90E8;&#x7F72;-mysql-&#x96C6;&#x7FA4;"><a name="helm-&#x90E8;&#x7F72;-mysql-&#x96C6;&#x7FA4;" class="anchor-navigation-ex-anchor" href="#helm-&#x90E8;&#x7F72;-mysql-&#x96C6;&#x7FA4;"><i class="fa fa-link" aria-hidden="true"></i></a>Helm &#x90E8;&#x7F72; MySQL &#x96C6;&#x7FA4;</h2>
+<p>&#x5B89;&#x88C5;&#x8FC7;&#x7A0B;&#x4E2D;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x4F20;&#x9012;&#x914D;&#x7F6E;&#x6570;&#x636E;&#xFF1A;</p>
+<ul>
+<li><strong><code>-f</code></strong><code>(&#x6216;--values)</code>:&#x4F7F;&#x7528; YAML &#x6587;&#x4EF6;&#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x3002;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x591A;&#x6B21;&#xFF0C;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x6700;&#x53F3;&#x8FB9;&#x7684;&#x6587;&#x4EF6;&#x3002;</li>
+<li><strong><code>--set</code></strong>:&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x5BF9;&#x6307;&#x5B9A;&#x9879;&#x8FDB;&#x884C;&#x8986;&#x76D6;&#x3002;
+&#x5982;&#x679C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x5219; <strong><code>--set</code></strong> &#x4E2D;&#x7684;&#x503C;&#x4F1A;&#x88AB;&#x5408;&#x5E76;&#x5230; <strong><code>-f</code></strong> &#x4E2D;&#xFF0C;&#x4F46;&#x662F; <strong><code>--set</code></strong> &#x4E2D;&#x7684;&#x503C;&#x4F18;&#x5148;&#x7EA7;&#x66F4;&#x9AD8;&#x3002;</li>
+</ul>
+<hr>
+<p>&#x4F7F;&#x7528;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x8BBE;&#x7F6E; MySQL &#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<pre><code class="lang-yaml"><span class="hljs-attr">auth:</span>
+<span class="hljs-attr">  rootPassword:</span> <span class="hljs-string">&quot;123456&quot;</span>
+
+<span class="hljs-comment"># Primary database configuration</span>
+<span class="hljs-attr">primary:</span>
+  <span class="hljs-comment"># Enable persistence using Persistent Volume Claims</span>
+<span class="hljs-attr">  persistence:</span>
+    <span class="hljs-comment"># &#x4E3B;&#x8282;&#x70B9;&#x6301;&#x4E45;&#x5377;&#x5927;&#x5C0F;</span>
+<span class="hljs-attr">    size:</span> <span class="hljs-number">1</span>Gi
+    <span class="hljs-comment"># If true, use a Persistent Volume Claim, If false, use emptyDir</span>
+<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Secondary database configuration</span>
+<span class="hljs-attr">secondary:</span>
+  <span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x4ECE;&#x8282;&#x70B9;&#x6570;&#x91CF;</span>
+<span class="hljs-attr">  replicaCount:</span> <span class="hljs-number">2</span>
+  <span class="hljs-comment"># Enable persistence using Persistent Volume Claims</span>
+<span class="hljs-attr">  persistence:</span>
+    <span class="hljs-comment"># &#x4ECE;&#x8282;&#x70B9;&#x6301;&#x4E45;&#x5377;&#x5927;&#x5C0F;</span>
+<span class="hljs-attr">    size:</span> <span class="hljs-number">1</span>Gi
+    <span class="hljs-comment"># If true, use a Persistent Volume Claim, If false, use emptyDir</span>
+<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># &#x5B89;&#x88C5;&#x96C6;&#x7FA4;&#x5FC5;&#x987B;&#x914D;&#x7F6E;</span>
+<span class="hljs-attr">architecture:</span> replication
+</code></pre>
+<pre><code class="lang-sh">&#x901A;&#x8FC7;yaml&#x95EE;&#x5377;&#x5B89;&#x88C5;
+$ helm install cluster <span class="hljs-_">-f</span> values.yaml bitnami/mysql
+NAME: cluster
+LAST DEPLOYED: Thu Oct 26 07:56:15 2023
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+CHART NAME: mysql
+CHART VERSION: 9.14.1
+APP VERSION: 8.0.35
+
+** Please be patient <span class="hljs-keyword">while</span> the chart is being deployed **
+
+Tip:
+
+  Watch the deployment status using the <span class="hljs-built_in">command</span>: kubectl get pods -w --namespace default
+
+Services:
+
+  <span class="hljs-built_in">echo</span> Primary: cluster-mysql-primary.default.svc.cluster.local:3306
+  <span class="hljs-built_in">echo</span> Secondary: cluster-mysql-secondary.default.svc.cluster.local:3306
+
+Execute the following to get the administrator credentials:
+
+  <span class="hljs-built_in">echo</span> Username: root
+  MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace default cluster-mysql -o jsonpath=<span class="hljs-string">&quot;{.data.mysql-root-password}&quot;</span> | base64 <span class="hljs-_">-d</span>)
+
+To connect to your database:
+
+  1. Run a pod that you can use as a client:
+
+      kubectl run cluster-mysql-client --rm --tty -i --restart=<span class="hljs-string">&apos;Never&apos;</span> --image  docker.io/bitnami/mysql:8.0.35-debian-11-r0 --namespace default --env MYSQL_ROOT_PASSWORD=<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span> --command -- bash
+
+  2. To connect to primary service (<span class="hljs-built_in">read</span>/write):
+
+      mysql -h cluster-mysql-primary.default.svc.cluster.local -uroot -p<span class="hljs-string">&quot;<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span>&quot;</span>
+
+  3. To connect to secondary service (<span class="hljs-built_in">read</span>-only):
+
+      mysql -h cluster-mysql-secondary.default.svc.cluster.local -uroot -p<span class="hljs-string">&quot;<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span>&quot;</span>
+</code></pre>
+<p>&#x83B7;&#x53D6;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;</p>
+<pre><code class="lang-sh">$ kubectl get pod --watch
+NAME                        READY   STATUS              RESTARTS   AGE
+cluster-mysql-primary-0     0/1     ContainerCreating   0          2m33s
+cluster-mysql-secondary-0   0/1     Running             0          2m33s
+cluster-mysql-primary-0     0/1     Running             0          2m48s
+cluster-mysql-primary-0     0/1     Running             0          3m34s
+cluster-mysql-primary-0     1/1     Running             0          3m34s
+cluster-mysql-secondary-0   0/1     Running             1 (3s ago)   4m22s
+cluster-mysql-secondary-0   0/1     Running             1 (19s ago)   4m38s
+cluster-mysql-secondary-0   1/1     Running             1 (29s ago)   4m48s
+cluster-mysql-secondary-1   0/1     Pending             0             0s
+cluster-mysql-secondary-1   0/1     Pending             0             22s
+cluster-mysql-secondary-1   0/1     ContainerCreating   0             22s
+cluster-mysql-secondary-1   0/1     Running             0             2m9s
+$ kubectl get all
+NAME                            READY   STATUS    RESTARTS       AGE
+pod/cluster-mysql-primary-0     1/1     Running   0              8m20s
+pod/cluster-mysql-secondary-0   1/1     Running   1 (4m1s ago)   8m20s
+pod/cluster-mysql-secondary-1   1/1     Running   0              3m32s
+
+NAME                                       TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE
+service/kubernetes                         ClusterIP   10.43.0.1       &lt;none&gt;        443/TCP    25h
+service/cluster-mysql-primary-headless     ClusterIP   None            &lt;none&gt;        3306/TCP   8m20s
+service/cluster-mysql-secondary-headless   ClusterIP   None            &lt;none&gt;        3306/TCP   8m20s
+service/cluster-mysql-secondary            ClusterIP   10.43.119.2     &lt;none&gt;        3306/TCP   8m20s
+service/cluster-mysql-primary              ClusterIP   10.43.131.119   &lt;none&gt;        3306/TCP   8m20s
+
+NAME                                       READY   AGE
+statefulset.apps/cluster-mysql-primary     1/1     8m21s
+statefulset.apps/cluster-mysql-secondary   2/2     8m21s
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x5206;&#x522B;&#x4E3A;&#x4E3B;&#x4ECE;&#x5E93;&#x521B;&#x5EFA;&#x4E86;&#x65E0;&#x5934;&#x548C;&#x6709;&#x5934;&#x7684; service&#xFF0C;&#x4E3B;&#x4ECE;&#x5E93;&#x5206;&#x522B;&#x7528; statefulset &#x521B;&#x5EFA;</p>
+<p>&#x6309;&#x7167;&#x524D;&#x9762;&#x5B89;&#x88C5;&#x6210;&#x529F;&#x540E;&#x8BF4;&#x660E;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x914D;&#x7F6E;root&#x7528;&#x6237;&#x5BC6;&#x7801;&#x73AF;&#x5883;&#x53D8;&#x91CF;</span>
+$ MYSQL_ROOT_PASSWORD=$(kubectl get secret --namespace default cluster-mysql -o jsonpath=<span class="hljs-string">&quot;{.data.mysql-root-password}&quot;</span> | base64 <span class="hljs-_">-d</span>)
+<span class="hljs-comment"># &#x521B;&#x5EFA;mysql &#x5BA2;&#x6237;&#x7AEF;pod</span>
+kubectl run cluster-mysql-client --rm --tty -i --restart=<span class="hljs-string">&apos;Never&apos;</span> --image  docker.io/bitnami/mysql:8.0.35-debian-11-r0 --namespace default --env MYSQL_ROOT_PASSWORD=<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span> --command -- bash
+If you don<span class="hljs-string">&apos;t see a command prompt, try pressing enter.
+I have no name!@cluster-mysql-client:/$
+</span></code></pre>
+<ul>
+<li>&#x5728; pod &#x4E2D;&#x8FDE;&#x63A5;&#x4E3B;&#x5E93;&#x6D4B;&#x8BD5;</li>
+</ul>
+<pre><code class="lang-sh">$ mysql -h cluster-mysql-primary.default.svc.cluster.local -uroot -p<span class="hljs-string">&quot;<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span>&quot;</span>
+mysql: [Warning] Using a password on the <span class="hljs-built_in">command</span> line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 133
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type <span class="hljs-string">&apos;help;&apos;</span> or <span class="hljs-string">&apos;\h&apos;</span> <span class="hljs-keyword">for</span> help. Type <span class="hljs-string">&apos;\c&apos;</span> to clear the current input statement.
+
+mysql&gt; CREATE DATABASE <span class="hljs-built_in">test</span>;
+Query OK, 1 row affected (0.07 sec)
+
+mysql&gt; CREATE TABLE test.message (message VARCHAR(250));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql&gt; INSERT INTO test.message VALUES (<span class="hljs-string">&apos;hello&apos;</span>);
+Query OK, 1 row affected (0.05 sec)
+
+mysql&gt; <span class="hljs-built_in">exit</span>
+Bye
+</code></pre>
+<ul>
+<li>&#x5728; pod &#x4E2D;&#x8FDE;&#x63A5;&#x4ECE;&#x5E93;&#x6D4B;&#x8BD5;</li>
+</ul>
+<pre><code class="lang-sh">$ mysql -h cluster-mysql-secondary.default.svc.cluster.local -uroot -p<span class="hljs-string">&quot;<span class="hljs-variable">$MYSQL_ROOT_PASSWORD</span>&quot;</span>
+mysql: [Warning] Using a password on the <span class="hljs-built_in">command</span> line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 159
+Server version: 8.0.35 Source distribution
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type <span class="hljs-string">&apos;help;&apos;</span> or <span class="hljs-string">&apos;\h&apos;</span> <span class="hljs-keyword">for</span> help. Type <span class="hljs-string">&apos;\c&apos;</span> to clear the current input statement.
+
+mysql&gt; SELECT * FROM test.message;
++---------+
+| message |
++---------+
+| hello   |
++---------+
+1 row <span class="hljs-keyword">in</span> <span class="hljs-built_in">set</span> (0.02 sec)
+</code></pre>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;
+<a href="https://helm.sh/zh/docs/intro/install/" target="_blank">https://helm.sh/zh/docs/intro/install/</a>
+<a href="https://helm.sh/zh/docs/intro/using_helm/" target="_blank">https://helm.sh/zh/docs/intro/using_helm/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="port_forward.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Port-forward 端口转发">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Helm安装MySQL机群","level":"1.3.11","depth":2,"previous":{"title":"Port-forward 端口转发","level":"1.3.10","depth":2,"path":"runapp/port_forward.md","ref":"runapp/port_forward.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-lunr","-search","search-plus","a-import","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"a-import":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"gofulljs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"runapp/helm.md","mtime":"2023-10-26T08:15:01.278Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-26T08:23:17.262Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

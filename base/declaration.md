@@ -39,7 +39,7 @@
 ## YAML 规范
 
 - 缩进代表上下级关系
-- $\color{red} {缩进时不允许使用 Tab 键，只允许使用空格，通常缩进 2 个空格}$
+- <label style="color:red">缩进时不允许使用 Tab 键，只允许使用空格，通常缩进 2 个空格</label>
 - : 键值对，后面必须有空格
 - -列表，后面必须有空格
 - [ ]数组
@@ -105,7 +105,7 @@ pod "nginx" deleted
 ---
 
 - 键的格式：
-  - $\color{red}{前缀}$(可选)/$\color{red}{名称}$(必须)。
+  - <label style="color:red">前缀</label>(可选)/<label style="color:red">名称</label>(必须)。
 - 有效名称和值：
   - 必须为 63 个字符或更少（可以为空）
   - 如果不为空，必须以字母数字字符（[a-z0-9A-Z]）开头和结尾

@@ -5,10 +5,10 @@
 **Pod** 是包含一个或多个容器的容器组，是 Kubernetes 中创建和管理的最小对象。
 Pod 有以下特点：
 
-- Pod 是 kubernetes 中$\color{red}{最小的调度单位}$（原子单元），Kubernetes 直接管理 Pod 而不是容器。
-- 同一个 Pod 中的容器总是会被自动安排到集群中的$\color{red}{同一节点}$（物理机或虚拟机）上，并且$\color{red}{一起调度}$。
+- Pod 是 kubernetes 中 <label style="color:red">最小的调度单位</label>（原子单元），Kubernetes 直接管理 Pod 而不是容器。
+- 同一个 Pod 中的容器总是会被自动安排到集群中的 <label style="color:red">同一节点</label>（物理机或虚拟机）上，并且<label style="color:red">一起调度。</label>
 - Pod 可以理解为运行特定应用的“逻辑主机”，这些容器共享存储、网络和配置声明(如资源限制)。
-- 每个 Pod 有唯一的 IP 地址。 $\color{red}{IP 地址分配给 Pod}$，在同一个 Pod 内，所有容器共享一个 IP 地址和端口空间，Pod 内的容器可以使用 localhost 互相通信。
+- 每个 Pod 有唯一的 IP 地址。 <label style="color:red">IP 地址分配给 Pod</label>，在同一个 Pod 内，所有容器共享一个 IP 地址和端口空间，Pod 内的容器可以使用 localhost 互相通信。
 
 ---
 

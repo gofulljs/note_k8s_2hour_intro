@@ -1,0 +1,25 @@
+auth:
+  rootPassword: "123456"
+
+# Primary database configuration
+primary:
+  # Enable persistence using Persistent Volume Claims
+  persistence:
+    # 主节点持久卷大小
+    size: 1Gi
+    # If true, use a Persistent Volume Claim, If false, use emptyDir
+    enabled: true
+
+# Secondary database configuration
+secondary:
+  # 设置从节点数量
+  replicaCount: 2
+  # Enable persistence using Persistent Volume Claims
+  persistence:
+    # 从节点持久卷大小
+    size: 1Gi
+    # If true, use a Persistent Volume Claim, If false, use emptyDir
+    enabled: true
+
+# 安装集群必须配置
+architecture: replication

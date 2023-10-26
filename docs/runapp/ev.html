@@ -1,0 +1,654 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>临时卷(EV) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="gofulljs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="persistent_volume.html" />
+    
+    
+    <link rel="prev" href="volume.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../base/">
+            
+                <a href="../base/">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../base/intro.html">
+            
+                <a href="../base/intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../base/architecture.html">
+            
+                <a href="../base/architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../base/minikube.html">
+            
+                <a href="../base/minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../base/env_k3s.html">
+            
+                <a href="../base/env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../base/pod.html">
+            
+                <a href="../base/pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../base/deployment_replicaset.html">
+            
+                <a href="../base/deployment_replicaset.html">
+            
+                    
+                    Deployment(部署)与 ReplicaSet(副本集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../base/service.html">
+            
+                <a href="../base/service.html">
+            
+                    
+                    Service(服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../base/namespace.html">
+            
+                <a href="../base/namespace.html">
+            
+                    
+                    Namespace(命名空间)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../base/declaration.html">
+            
+                <a href="../base/declaration.html">
+            
+                    
+                    声明式对象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../base/canary.html">
+            
+                <a href="../base/canary.html">
+            
+                    
+                    金丝雀发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    运行有状态的应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="create_mysql.html">
+            
+                <a href="create_mysql.html">
+            
+                    
+                    创建 MySQL 数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="configmap_secret.html">
+            
+                <a href="configmap_secret.html">
+            
+                    
+                    ConfigMap 与 Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="volume.html">
+            
+                <a href="volume.html">
+            
+                    
+                    卷(Volume)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="ev.html">
+            
+                <a href="ev.html">
+            
+                    
+                    临时卷(EV)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="persistent_volume.html">
+            
+                <a href="persistent_volume.html">
+            
+                    
+                    持久卷(PV)与持久卷声明(PVC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="storage_class.html">
+            
+                <a href="storage_class.html">
+            
+                    
+                    存储类(StorageClass)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="stateful_set.html">
+            
+                <a href="stateful_set.html">
+            
+                    
+                    StatefulSet(有状态应用集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="headless_service.html">
+            
+                <a href="headless_service.html">
+            
+                    
+                    Headless Service(无头服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="mysql_replicate.html">
+            
+                <a href="mysql_replicate.html">
+            
+                    
+                    Mysql 主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="port_forward.html">
+            
+                <a href="port_forward.html">
+            
+                    
+                    Port-forward 端口转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="helm.html">
+            
+                <a href="helm.html">
+            
+                    
+                    Helm安装MySQL机群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >临时卷(EV)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4E34;&#x65F6;&#x5377;ev"><b></b>&#x4E34;&#x65F6;&#x5377;(EV)</a></li><ul><li><span class="title-icon "></span><a href="#emptydir"><b></b>emptyDir</a></li><li><span class="title-icon "></span><a href="#configmap-&#x5377;&#x548C;-secret-&#x5377;"><b></b>configMap &#x5377;&#x548C; secret &#x5377;</a></li></ul></ul></div><a href="#&#x4E34;&#x65F6;&#x5377;ev" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E34;&#x65F6;&#x5377;ev"><a name="&#x4E34;&#x65F6;&#x5377;ev" class="anchor-navigation-ex-anchor" href="#&#x4E34;&#x65F6;&#x5377;ev"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E34;&#x65F6;&#x5377;(EV)</h1>
+<ul>
+<li><strong>&#x4E34;&#x65F6;&#x5377;(Ephemeral Volume)</strong><ul>
+<li><label style="color:red">&#x4E0E; Pod &#x4E00;&#x8D77;&#x521B;&#x5EFA;&#x548C;&#x5220;&#x9664;&#xFF0C;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E0E; Pod &#x76F8;&#x540C;</label></li>
+<li><a href="https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#emptydir" target="_blank">emptyDir</a> - &#x521D;&#x59CB;&#x5185;&#x5BB9;&#x4E3A;&#x7A7A;&#x7684;&#x672C;&#x5730;&#x4E34;&#x65F6;&#x76EE;&#x5F55;</li>
+<li><a href="https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#configmap" target="_blank">configMap</a> - &#x4E3A; Pod &#x6CE8;&#x5165;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</li>
+<li><a href="https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/#secret" target="_blank">secret</a> - &#x4E3A; Pod &#x6CE8;&#x5165;&#x52A0;&#x5BC6;&#x6570;&#x636E;</li>
+</ul>
+</li>
+</ul>
+<h2 id="emptydir"><a name="emptydir" class="anchor-navigation-ex-anchor" href="#emptydir"><i class="fa fa-link" aria-hidden="true"></i></a>emptyDir</h2>
+<p>emptyDir &#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x521D;&#x59CB;&#x72B6;&#x6001;&#x4E3A;&#x7A7A;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x6765;&#x81EA;&#x672C;&#x5730;&#x7684; kubelet &#x6839;&#x76EE;&#x5F55;&#x6216;&#x5185;&#x5B58;(&#x9700;&#x8981;&#x5C06; <code>emptyDir.medium</code> &#x8BBE;&#x7F6E;&#x4E3A;<code>&quot;Memory&quot;</code>)&#x3002;
+&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x672C;&#x5730;&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x6765;&#x8BBE;&#x7F6E;&#x7F13;&#x5B58;&#x3001;&#x4FDD;&#x5B58;&#x65E5;&#x5FD7;&#x7B49;&#x3002;
+&#x4F8B;&#x5982;&#xFF0C;&#x5C06; redis &#x7684;&#x5B58;&#x50A8;&#x76EE;&#x5F55;&#x8BBE;&#x7F6E;&#x4E3A; emptyDir</p>
+<pre><code class="lang-yml"><span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> Pod
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> redis-pod
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  containers:</span>
+<span class="hljs-attr">    - name:</span> redis
+<span class="hljs-attr">      image:</span> redis
+<span class="hljs-attr">      volumeMounts:</span>
+<span class="hljs-attr">        - name:</span> redis-storage
+<span class="hljs-attr">          mountPath:</span> /data/redis
+<span class="hljs-attr">  volumes:</span>
+<span class="hljs-attr">    - name:</span> redis-storage
+<span class="hljs-attr">      emptyDir:</span> {}
+</code></pre>
+<h2 id="configmap-&#x5377;&#x548C;-secret-&#x5377;"><a name="configmap-&#x5377;&#x548C;-secret-&#x5377;" class="anchor-navigation-ex-anchor" href="#configmap-&#x5377;&#x548C;-secret-&#x5377;"><i class="fa fa-link" aria-hidden="true"></i></a>configMap &#x5377;&#x548C; secret &#x5377;</h2>
+<p class="r">
+&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x7684; configMap &#x548C; secret &#x4EE3;&#x8868;&#x7684;&#x662F;&#x5377;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x662F; configMap &#x548C; secret &#x5BF9;&#x8C61;&#x3002;
+&#x5220;&#x9664; Pod &#x5E76;&#x4E0D;&#x4F1A;&#x5220;&#x9664; ConfigMap &#x5BF9;&#x8C61;&#x548C; secret &#x5BF9;&#x8C61;&#x3002;
+</p>
+
+<p><img src="imgs/image-1.png" alt="Alt text"></p>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x83B7;&#x53D6;&#x6240;&#x6709;&#x4E34;&#x65F6;&#x5377;, &#x4F46;&#x5F97;&#x4E0D;&#x5230;&#x6709;&#x6548;&#x4FE1;&#x606F;</span>
+$ kubectl get ev
+&#x3002;&#x3002;&#x3002;
+</code></pre>
+<ul>
+<li>&#x67E5;&#x770B;&#x4E34;&#x65F6;&#x5377; configMap &#x6709;&#x6548;&#x4FE1;&#x606F;</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x83B7;&#x53D6;pod UID</span>
+$ kubectl get pods mysql-pod -o jsonpath=<span class="hljs-string">&apos;{.metadata.uid}&apos;</span>
+f49b79ac<span class="hljs-_">-e</span>233-45fb-9928-967a55de6b43<span class="hljs-comment">#</span>
+$ <span class="hljs-built_in">cd</span> /var/lib/kubelet/pods/
+$ ls
+66b1bd24<span class="hljs-_">-e</span>020-4665-9c0a<span class="hljs-_">-f</span>00c8d1eb15c  8aff060c<span class="hljs-_">-d</span>1e8-4b17-87ff-8a820525cb34  93717d34-0df2-40db-905a-2929ac3e99b4  f49b79ac<span class="hljs-_">-e</span>233-45fb-9928-967a55de6b43
+<span class="hljs-comment"># &#x8FDB;&#x5165;&#x4E34;&#x65F6;&#x5377;</span>
+$ <span class="hljs-built_in">cd</span> f49b79ac<span class="hljs-_">-e</span>233-45fb-9928-967a55de6b43/volumes/kubernetes.io~configmap/conf-volume
+<span class="hljs-comment"># &#x5F97;&#x5230;&#x4FE1;&#x606F;</span>
+$ cat mysql.cnf
+[mysqld]
+character-set-server=utf8mb4
+collation-server=utf8mb4_general_ci
+init-connect=<span class="hljs-string">&apos;SET NAMES utf8mb4&apos;</span>
+
+[client]
+default-character-set=utf8mb4
+
+[mysql]
+default-character-set=utf8mb4
+</code></pre>
+<ul>
+<li>&#x5220;&#x9664; pod &#x4E34;&#x65F6;&#x5377;&#x4E5F;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x4F46; configMap &#x5BF9;&#x8C61;&#x4F9D;&#x7136;&#x5B58;&#x5728;</li>
+</ul>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">cd</span> /var/lib/kubelet/pods
+$ ls
+66b1bd24<span class="hljs-_">-e</span>020-4665-9c0a<span class="hljs-_">-f</span>00c8d1eb15c  8aff060c<span class="hljs-_">-d</span>1e8-4b17-87ff-8a820525cb34  93717d34-0df2-40db-905a-2929ac3e99b4  f49b79ac<span class="hljs-_">-e</span>233-45fb-9928-967a55de6b43
+
+$ kubectl delete pod mysql-pod
+pod <span class="hljs-string">&quot;mysql-pod&quot;</span> deleted
+<span class="hljs-comment"># &#x88AB;&#x5220;&#x9664;</span>
+$ ls
+66b1bd24<span class="hljs-_">-e</span>020-4665-9c0a<span class="hljs-_">-f</span>00c8d1eb15c  8aff060c<span class="hljs-_">-d</span>1e8-4b17-87ff-8a820525cb34  93717d34-0df2-40db-905a-2929ac3e99b4
+<span class="hljs-comment"># &#x770B;&#x5230;configMap &#x4F9D;&#x7136;&#x5B58;&#x5728;</span>
+$ kubectl get cm
+NAME               DATA   AGE
+kube-root-ca.crt   1      69m
+mysql-config       1      52m
+</code></pre>
+<hr>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;<br><a href="https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/storage/volumes/</a>
+<a href="https://kubernetes.io/zh-cn/docs/concepts/storage/ephemeral-volumes/" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/storage/ephemeral-volumes/</a>
+<a href="https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-volume-storage/" target="_blank">https://kubernetes.io/zh-cn/docs/tasks/configure-pod-container/configure-volume-storage/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="volume.html" class="navigation navigation-prev " aria-label="Previous page: 卷(Volume)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="persistent_volume.html" class="navigation navigation-next " aria-label="Next page: 持久卷(PV)与持久卷声明(PVC)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"临时卷(EV)","level":"1.3.4","depth":2,"next":{"title":"持久卷(PV)与持久卷声明(PVC)","level":"1.3.5","depth":2,"path":"runapp/persistent_volume.md","ref":"runapp/persistent_volume.md","articles":[]},"previous":{"title":"卷(Volume)","level":"1.3.3","depth":2,"path":"runapp/volume.md","ref":"runapp/volume.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-lunr","-search","search-plus","a-import","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"a-import":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"gofulljs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"runapp/ev.md","mtime":"2023-10-26T08:18:41.686Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-26T08:23:17.262Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

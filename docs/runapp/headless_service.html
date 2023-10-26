@@ -1,0 +1,711 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Headless Service(无头服务) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="gofulljs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mysql_replicate.html" />
+    
+    
+    <link rel="prev" href="stateful_set.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../base/">
+            
+                <a href="../base/">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../base/intro.html">
+            
+                <a href="../base/intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../base/architecture.html">
+            
+                <a href="../base/architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../base/minikube.html">
+            
+                <a href="../base/minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../base/env_k3s.html">
+            
+                <a href="../base/env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../base/pod.html">
+            
+                <a href="../base/pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../base/deployment_replicaset.html">
+            
+                <a href="../base/deployment_replicaset.html">
+            
+                    
+                    Deployment(部署)与 ReplicaSet(副本集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../base/service.html">
+            
+                <a href="../base/service.html">
+            
+                    
+                    Service(服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../base/namespace.html">
+            
+                <a href="../base/namespace.html">
+            
+                    
+                    Namespace(命名空间)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../base/declaration.html">
+            
+                <a href="../base/declaration.html">
+            
+                    
+                    声明式对象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../base/canary.html">
+            
+                <a href="../base/canary.html">
+            
+                    
+                    金丝雀发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    运行有状态的应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="create_mysql.html">
+            
+                <a href="create_mysql.html">
+            
+                    
+                    创建 MySQL 数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="configmap_secret.html">
+            
+                <a href="configmap_secret.html">
+            
+                    
+                    ConfigMap 与 Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="volume.html">
+            
+                <a href="volume.html">
+            
+                    
+                    卷(Volume)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="ev.html">
+            
+                <a href="ev.html">
+            
+                    
+                    临时卷(EV)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="persistent_volume.html">
+            
+                <a href="persistent_volume.html">
+            
+                    
+                    持久卷(PV)与持久卷声明(PVC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="storage_class.html">
+            
+                <a href="storage_class.html">
+            
+                    
+                    存储类(StorageClass)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="stateful_set.html">
+            
+                <a href="stateful_set.html">
+            
+                    
+                    StatefulSet(有状态应用集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.8" data-path="headless_service.html">
+            
+                <a href="headless_service.html">
+            
+                    
+                    Headless Service(无头服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="mysql_replicate.html">
+            
+                <a href="mysql_replicate.html">
+            
+                    
+                    Mysql 主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="port_forward.html">
+            
+                <a href="port_forward.html">
+            
+                    
+                    Port-forward 端口转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="helm.html">
+            
+                <a href="helm.html">
+            
+                    
+                    Helm安装MySQL机群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Headless Service(无头服务)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#headless-service&#x65E0;&#x5934;&#x670D;&#x52A1;"><b></b>Headless Service(&#x65E0;&#x5934;&#x670D;&#x52A1;)</a></li><ul><li><span class="title-icon "></span><a href="#&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;headless-services&#xFF09;"><b></b>&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;Headless Services&#xFF09;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;-id"><b></b>&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC; ID</a></li></ul></ul></ul></div><a href="#headless-service&#x65E0;&#x5934;&#x670D;&#x52A1;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="headless-service&#x65E0;&#x5934;&#x670D;&#x52A1;"><a name="headless-service&#x65E0;&#x5934;&#x670D;&#x52A1;" class="anchor-navigation-ex-anchor" href="#headless-service&#x65E0;&#x5934;&#x670D;&#x52A1;"><i class="fa fa-link" aria-hidden="true"></i></a>Headless Service(&#x65E0;&#x5934;&#x670D;&#x52A1;)</h1>
+<p>&#x4E4B;&#x524D;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x4E09;&#x4E2A;&#x5404;&#x81EA;&#x72EC;&#x7ACB;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5B9E;&#x4F8B;&#xFF0C;mysql-0&#xFF0C;mysql-1&#xFF0C;mysql-2&#x3002;
+&#x8981;&#x60F3;&#x8BA9;&#x522B;&#x7684;&#x5BB9;&#x5668;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x5B83;&#x53D1;&#x5E03;&#x4E3A; Service&#xFF0C;&#x4F46;&#x662F; Service &#x5E26;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x529F;&#x80FD;&#xFF0C;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x4F1A;&#x8F6C;&#x53D1;&#x7ED9;&#x4E0D;&#x540C;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8FD9;&#x6837;&#x5B50;&#x4F7F;&#x7528;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x6709;&#x5F88;&#x5927;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;headless-services&#xFF09;"><a name="&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;headless-services&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;headless-services&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;Headless Services&#xFF09;</h2>
+<p>&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;Headless Service&#xFF09;&#x53EF;&#x4EE5;&#x4E3A; StatefulSet &#x6210;&#x5458;&#x63D0;&#x4F9B;&#x7A33;&#x5B9A;&#x7684; DNS &#x5730;&#x5740;&#x3002;
+&#x5728;&#x4E0D;&#x9700;&#x8981;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A; Cluster IP &#x7684;&#x503C;&#x4E3A; &quot;None&quot; &#x6765;&#x521B;&#x5EFA;&#x65E0;&#x5934;&#x670D;&#x52A1;&#x3002;</p>
+<p class="r">
+<b>&#x6CE8;&#x610F;:</b><code>StatefulSet</code>&#x4E2D;&#x7684;<code>ServiceName</code>&#x5FC5;&#x987B;&#x8981;&#x8DDF;Service&#x4E2D;&#x7684;<code>metadata.name</code>&#x4E00;&#x81F4;
+</p>
+
+<pre><code class="lang-yaml"><span class="hljs-comment"># &#x4E3A; StatefulSet &#x6210;&#x5458;&#x63D0;&#x4F9B;&#x7A33;&#x5B9A;&#x7684; DNS &#x8868;&#x9879;&#x7684;&#x65E0;&#x5934;&#x670D;&#x52A1;&#xFF08;Headless Service&#xFF09;</span>
+<span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> Service
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-comment">#&#x91CD;&#x8981;&#xFF01;&#x8FD9;&#x91CC;&#x7684;&#x540D;&#x5B57;&#x8981;&#x8DDF;&#x540E;&#x9762;StatefulSet&#x91CC;ServiceName&#x4E00;&#x81F4;</span>
+<span class="hljs-attr">  name:</span> mysql-svc
+<span class="hljs-attr">  labels:</span>
+<span class="hljs-attr">    app:</span> mysql-svc
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  ports:</span>
+<span class="hljs-attr">    - name:</span> mysql
+<span class="hljs-attr">      port:</span> <span class="hljs-number">3306</span>
+  <span class="hljs-comment"># &#x8BBE;&#x7F6E;Headless Service</span>
+<span class="hljs-attr">  clusterIP:</span> None
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    app:</span> mysql
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> apps/v1
+<span class="hljs-attr">kind:</span> StatefulSet
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> mysql-sts
+<span class="hljs-attr">spec:</span>
+<span class="hljs-attr">  selector:</span>
+<span class="hljs-attr">    matchLabels:</span>
+<span class="hljs-attr">      app:</span> mysql <span class="hljs-comment"># &#x5FC5;&#x987B;&#x5339;&#x914D; .spec.template.metadata.labels</span>
+<span class="hljs-attr">  serviceName:</span> <span class="hljs-string">&quot;mysql-svc&quot;</span>
+<span class="hljs-attr">  replicas:</span> <span class="hljs-number">3</span> <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x503C;&#x662F; 1</span>
+<span class="hljs-attr">  minReadySeconds:</span> <span class="hljs-number">10</span> <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x503C;&#x662F; 0</span>
+<span class="hljs-attr">  template:</span>
+<span class="hljs-attr">    metadata:</span>
+<span class="hljs-attr">      labels:</span>
+<span class="hljs-attr">        app:</span> mysql <span class="hljs-comment"># &#x5FC5;&#x987B;&#x5339;&#x914D; .spec.selector.matchLabels</span>
+<span class="hljs-attr">    spec:</span>
+<span class="hljs-attr">      terminationGracePeriodSeconds:</span> <span class="hljs-number">10</span>
+<span class="hljs-attr">      containers:</span>
+<span class="hljs-attr">        - name:</span> mysql
+<span class="hljs-attr">          image:</span> mysql:<span class="hljs-number">5.7</span>
+<span class="hljs-attr">          env:</span>
+<span class="hljs-attr">            - name:</span> MYSQL_ROOT_PASSWORD
+<span class="hljs-attr">              value:</span> <span class="hljs-string">&quot;123456&quot;</span>
+<span class="hljs-attr">          ports:</span>
+<span class="hljs-attr">            - containerPort:</span> <span class="hljs-number">3306</span>
+<span class="hljs-attr">          volumeMounts:</span>
+<span class="hljs-attr">            - mountPath:</span> /var/lib/mysql <span class="hljs-comment">#&#x5BB9;&#x5668;&#x4E2D;&#x7684;&#x76EE;&#x5F55;</span>
+<span class="hljs-attr">              name:</span> data-volume
+<span class="hljs-attr">  volumeClaimTemplates:</span>
+<span class="hljs-attr">    - metadata:</span>
+<span class="hljs-attr">        name:</span> data-volume
+<span class="hljs-attr">      spec:</span>
+<span class="hljs-attr">        accessModes:</span> [<span class="hljs-string">&quot;ReadWriteOnce&quot;</span>]
+<span class="hljs-attr">        storageClassName:</span> local-path
+<span class="hljs-attr">        resources:</span>
+<span class="hljs-attr">          requests:</span>
+<span class="hljs-attr">            storage:</span> <span class="hljs-number">1</span>Gi
+</code></pre>
+<pre><code class="lang-sh">$ kubectl apply <span class="hljs-_">-f</span> statefulset_headless.yaml
+service/mysql-svc created
+statefulset.apps/mysql-sts configured
+$ kubectl describe svc/mysql-svc
+Name:              mysql-svc
+Namespace:         default
+Labels:            app=mysql-svc
+Annotations:       &lt;none&gt;
+Selector:          app=mysql
+Type:              ClusterIP
+IP Family Policy:  SingleStack
+IP Families:       IPv4
+IP:                None
+IPs:               None
+Port:              mysql  3306/TCP
+TargetPort:        3306/TCP
+Endpoints:         10.42.0.6:3306,10.42.1.8:3306,10.42.2.12:3306
+Session Affinity:  None
+Events:            &lt;none&gt;
+<span class="hljs-comment"># &#x53EF;&#x4EE5;&#x770B;&#x5230; CLUSTER-IP &#x4E3A; None</span>
+$ kubectl get svc
+NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)    AGE
+kubernetes   ClusterIP   10.43.0.1    &lt;none&gt;        443/TCP    177m
+mysql-svc    ClusterIP   None         &lt;none&gt;        3306/TCP   37s
+</code></pre>
+<h3 id="&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;-id"><a name="&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;-id" class="anchor-navigation-ex-anchor" href="#&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC;-id"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7A33;&#x5B9A;&#x7684;&#x7F51;&#x7EDC; ID</h3>
+<p>StatefulSet &#x4E2D;&#x7684;&#x6BCF;&#x4E2A; Pod &#x90FD;&#x4F1A;&#x88AB;&#x5206;&#x914D;&#x4E00;&#x4E2A; StatefulSet &#x540D;&#x79F0;-&#x5E8F;&#x53F7;&#x683C;&#x5F0F;&#x7684;&#x4E3B;&#x673A;&#x540D;&#x3002;
+&#x96C6;&#x7FA4;&#x5185;&#x7F6E;&#x7684; DNS &#x4F1A;&#x4E3A; Service &#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5185;&#x90E8;&#x57DF;&#x540D; db.default.svc.cluster.local,&#x5B83;&#x7684;&#x683C;&#x5F0F;&#x4E3A; &#x670D;&#x52A1;&#x540D;&#x79F0;.&#x547D;&#x540D;&#x7A7A;&#x95F4;.svc.cluster.local&#x3002;
+Service &#x4E0B;&#x7684;&#x6BCF;&#x4E2A; Pod &#x4F1A;&#x88AB;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5B50;&#x57DF;&#x540D;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A; pod &#x540D;&#x79F0;.&#x6240;&#x5C5E;&#x670D;&#x52A1;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x4F8B;&#x5982; mysql-0 &#x7684;&#x57DF;&#x540D;&#x4E3A; mysql-0.db.default.svc.cluster.local&#x3002;
+&#x521B;&#x5EFA; Pod &#x65F6;&#xFF0C;DNS &#x57DF;&#x540D;&#x751F;&#x6548;&#x53EF;&#x80FD;&#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x5EF6;&#x8FDF;(&#x51E0;&#x79D2;&#x6216;&#x51E0;&#x5341;&#x79D2;)&#x3002;
+Pod &#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; DNS &#x57DF;&#x540D;&#x8BBF;&#x95EE;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E0B;&#x53EF;&#x4EE5;&#x7701;&#x7565;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x53CA;&#x5176;&#x4E4B;&#x540E;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<ul>
+<li>&#x67E5;&#x770B;&#x4E3B;&#x8282;&#x70B9; host &#x6587;&#x4EF6;</li>
+</ul>
+<pre><code class="lang-sh">$ cat /etc/hosts
+<span class="hljs-comment"># Kubernetes-managed hosts file.</span>
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+fe00::0 ip6-mcastprefix
+fe00::1 ip6-allnodes
+fe00::2 ip6-allrouters
+10.42.1.8       mysql-sts-0.mysql-svc.default.svc.cluster.local mysql-sts-0
+</code></pre>
+<ul>
+<li>&#x65B0; pod &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8BBF;&#x95EE;&#x8DEF;&#x7531;</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl run dns-test -ti --image=busybox:1.28 --rm
+If you don<span class="hljs-string">&apos;t see a command prompt, try pressing enter.
+/ # nslookup mysql-svc
+Server:    10.43.0.10
+Address 1: 10.43.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      mysql-svc
+Address 1: 10.42.0.6 mysql-sts-2.mysql-svc.default.svc.cluster.local
+Address 2: 10.42.1.8 mysql-sts-0.mysql-svc.default.svc.cluster.local
+Address 3: 10.42.2.12 mysql-sts-1.mysql-svc.default.svc.cluster.local
+/ # nslookup mysql-sts-0.mysql-svc
+Server:    10.43.0.10
+Address 1: 10.43.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      mysql-sts-0.mysql-svc
+Address 1: 10.42.1.8 mysql-sts-0.mysql-svc.default.svc.cluster.local
+</span></code></pre>
+<ul>
+<li>&#x6E05;&#x9664;</li>
+</ul>
+<pre><code class="lang-sh">$ kubectl delete <span class="hljs-_">-f</span> statefulset_headless.yaml
+service <span class="hljs-string">&quot;mysql-svc&quot;</span> deleted
+statefulset.apps <span class="hljs-string">&quot;mysql-sts&quot;</span> deleted
+</code></pre>
+<hr>
+<p>&#x53C2;&#x8003;&#x6587;&#x6863;&#xFF1A;
+<a href="https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/</a>
+<a href="https://kubernetes.io/zh-cn/docs/tutorials/stateful-application/basic-stateful-set/" target="_blank">https://kubernetes.io/zh-cn/docs/tutorials/stateful-application/basic-stateful-set/</a>
+<a href="https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#headless-services" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/services-networking/service/#headless-services</a>
+<a href="https://kubernetes.io/zh-cn/docs/tasks/run-application/run-replicated-stateful-application/" target="_blank">https://kubernetes.io/zh-cn/docs/tasks/run-application/run-replicated-stateful-application/</a>
+<a href="https://kubernetes.io/zh-cn/docs/concepts/services-networking/dns-pod-service/" target="_blank">https://kubernetes.io/zh-cn/docs/concepts/services-networking/dns-pod-service/</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="stateful_set.html" class="navigation navigation-prev " aria-label="Previous page: StatefulSet(有状态应用集)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mysql_replicate.html" class="navigation navigation-next " aria-label="Next page: Mysql 主从复制">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Headless Service(无头服务)","level":"1.3.8","depth":2,"next":{"title":"Mysql 主从复制","level":"1.3.9","depth":2,"path":"runapp/mysql_replicate.md","ref":"runapp/mysql_replicate.md","articles":[]},"previous":{"title":"StatefulSet(有状态应用集)","level":"1.3.7","depth":2,"path":"runapp/stateful_set.md","ref":"runapp/stateful_set.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-lunr","-search","search-plus","a-import","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"a-import":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"gofulljs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"runapp/headless_service.md","mtime":"2023-10-26T03:07:39.852Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-26T08:23:17.262Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

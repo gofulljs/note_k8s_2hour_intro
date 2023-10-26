@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment-canary
+  namespace: dev
+  labels:
+    app: nginx-deployment-canary
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        # 因为新部署的标签和原部署service选择的标签一样，所以部署后会自动加入原service
+        app: nginx
+        track: canary
+    spec:
+      containers:
+        - name: new-nginx
+          image: docker/getting-started
+          ports:
+            - containerPort: 80

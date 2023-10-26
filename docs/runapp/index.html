@@ -1,0 +1,582 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>运行有状态的应用 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="gofulljs">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="create_mysql.html" />
+    
+    
+    <link rel="prev" href="../base/canary.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Kubernetes 课程导读
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../base/">
+            
+                <a href="../base/">
+            
+                    
+                    Kubernetes 基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../base/intro.html">
+            
+                <a href="../base/intro.html">
+            
+                    
+                    Kubernetes 简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../base/architecture.html">
+            
+                <a href="../base/architecture.html">
+            
+                    
+                    Kubernetes 架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../base/minikube.html">
+            
+                <a href="../base/minikube.html">
+            
+                    
+                    安装 Minikube
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../base/env_k3s.html">
+            
+                <a href="../base/env_k3s.html">
+            
+                    
+                    使用 K3s 快速搭建集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../base/pod.html">
+            
+                <a href="../base/pod.html">
+            
+                    
+                    Pod(容器集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../base/deployment_replicaset.html">
+            
+                <a href="../base/deployment_replicaset.html">
+            
+                    
+                    Deployment(部署)与 ReplicaSet(副本集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../base/service.html">
+            
+                <a href="../base/service.html">
+            
+                    
+                    Service(服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../base/namespace.html">
+            
+                <a href="../base/namespace.html">
+            
+                    
+                    Namespace(命名空间)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../base/declaration.html">
+            
+                <a href="../base/declaration.html">
+            
+                    
+                    声明式对象配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../base/canary.html">
+            
+                <a href="../base/canary.html">
+            
+                    
+                    金丝雀发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    运行有状态的应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="create_mysql.html">
+            
+                <a href="create_mysql.html">
+            
+                    
+                    创建 MySQL 数据库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="configmap_secret.html">
+            
+                <a href="configmap_secret.html">
+            
+                    
+                    ConfigMap 与 Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="volume.html">
+            
+                <a href="volume.html">
+            
+                    
+                    卷(Volume)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="ev.html">
+            
+                <a href="ev.html">
+            
+                    
+                    临时卷(EV)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="persistent_volume.html">
+            
+                <a href="persistent_volume.html">
+            
+                    
+                    持久卷(PV)与持久卷声明(PVC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="storage_class.html">
+            
+                <a href="storage_class.html">
+            
+                    
+                    存储类(StorageClass)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="stateful_set.html">
+            
+                <a href="stateful_set.html">
+            
+                    
+                    StatefulSet(有状态应用集)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="headless_service.html">
+            
+                <a href="headless_service.html">
+            
+                    
+                    Headless Service(无头服务)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="mysql_replicate.html">
+            
+                <a href="mysql_replicate.html">
+            
+                    
+                    Mysql 主从复制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="port_forward.html">
+            
+                <a href="port_forward.html">
+            
+                    
+                    Port-forward 端口转发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="helm.html">
+            
+                <a href="helm.html">
+            
+                    
+                    Helm安装MySQL机群
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >运行有状态的应用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;"><b></b>&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;</a></li></ul></div><a href="#&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;"><a name="&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x884C;&#x6709;&#x72B6;&#x6001;&#x5E94;&#x7528;</h1>
+<p>&#x6211;&#x4EEC;&#x4EE5; MySQL &#x6570;&#x636E;&#x5E93;&#x4E3A;&#x4F8B;&#xFF0C;&#x5728; kubernetes &#x96C6;&#x7FA4;&#x4E2D;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x6709;&#x72B6;&#x6001;&#x7684;&#x5E94;&#x7528;&#x3002;
+&#x90E8;&#x7F72;&#x6570;&#x636E;&#x5E93;&#x51E0;&#x4E4E;&#x8986;&#x76D6;&#x4E86; kubernetes &#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x6982;&#x5FF5;&#xFF1A;</p>
+<ul>
+<li><strong>&#x914D;&#x7F6E;&#x6587;&#x4EF6;--ConfigMap</strong></li>
+<li><strong>&#x4FDD;&#x5B58;&#x5BC6;&#x7801;--Secret</strong></li>
+<li><strong>&#x6570;&#x636E;&#x5B58;&#x50A8;--&#x6301;&#x4E45;&#x5377;(PV)&#x548C;&#x6301;&#x4E45;&#x5377;&#x58F0;&#x660E;(PVC)</strong></li>
+<li><strong>&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x5377;--&#x5B58;&#x50A8;&#x7C7B;(StorageClass)</strong></li>
+<li><strong>&#x90E8;&#x7F72;&#x591A;&#x4E2A;&#x5B9E;&#x4F8B;--StatefulSet</strong></li>
+<li><strong>&#x6570;&#x636E;&#x5E93;&#x8BBF;&#x95EE;--Headless Service</strong></li>
+<li><strong>&#x4E3B;&#x4ECE;&#x590D;&#x5236;--&#x521D;&#x59CB;&#x5316;&#x5BB9;&#x5668;&#x548C; sidecar</strong></li>
+<li><strong>&#x6570;&#x636E;&#x5E93;&#x8C03;&#x8BD5;--port-forward</strong></li>
+<li><strong>&#x90E8;&#x7F72; Mysql &#x96C6;&#x7FA4;--helm</strong></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../base/canary.html" class="navigation navigation-prev " aria-label="Previous page: 金丝雀发布">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="create_mysql.html" class="navigation navigation-next " aria-label="Next page: 创建 MySQL 数据库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"运行有状态的应用","level":"1.3","depth":1,"next":{"title":"创建 MySQL 数据库","level":"1.3.1","depth":2,"path":"runapp/create_mysql.md","ref":"runapp/create_mysql.md","articles":[]},"previous":{"title":"金丝雀发布","level":"1.2.10","depth":2,"path":"base/canary.md","ref":"base/canary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","-lunr","-search","search-plus","a-import","code","anchor-navigation-ex","ga","3-ba","github","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"gopher-1"},"github":{"url":"https://github.com/gofulljs"},"code":{"copyButtons":false},"a-import":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"showLevelIcon":false,"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"printLog":false,"multipleH1":false,"multipleH2":false,"associatedWithSummary":true,"multipleH3":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"multipleH4":false},"back-to-top-button":{},"3-ba":{"configuration":"auto","token":"4c1823e87df49c9e304623b546c910fd"},"ga":{"configuration":"auto","token":"G-VMFJ3KGT9"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"search-plus":{}},"theme":"default","author":"gofulljs","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"runapp/index.md","mtime":"2023-10-25T02:36:13.524Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-26T08:23:17.262Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
