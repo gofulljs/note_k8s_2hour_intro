@@ -19,12 +19,13 @@ hostPath 卷将主机节点上的文件或目录挂载到 Pod 中。
 ---
 
 **hostPath 的 type 值：**
-| DirectoryOrCreate | DirectoryOrCreate |
-| ----------------- | ----------------- |
-| **Directory** | **挂载已存在目录。不存在会报错。**|
-| **FileOrCreate** | **文件不存在则自动创建。**<br>**不会自动创建文件的父目录，必须确保文件路径已经存在。**|
-| **File** | **挂载已存在的文件。不存在会报错。**|
-| **Socket** | **挂载 UNIX 套接字。例如挂载/var/run/docker.sock 进程**|
+
+| DirectoryOrCreate | DirectoryOrCreate                                                                      |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| **Directory**     | **挂载已存在目录。不存在会报错。**                                                     |
+| **FileOrCreate**  | **文件不存在则自动创建。**<br>**不会自动创建文件的父目录，必须确保文件路径已经存在。** |
+| **File**          | **挂载已存在的文件。不存在会报错。**                                                   |
+| **Socket**        | **挂载 UNIX 套接字。例如挂载/var/run/docker.sock 进程**                                |
 
 @import "source/mysql/mysql-pod.yml"
 
